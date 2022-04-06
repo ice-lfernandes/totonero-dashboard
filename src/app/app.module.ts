@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule
   ],
   providers: [],
