@@ -1,9 +1,9 @@
 .card-presentation-game h5 {
-    font-size: 0.75em;
+    font-size: 0.8em;
 }
 
 .card-presentation-game h6 {
-    font-size: 0.6em;
+    font-size: 0.7em;
 }
 
 img {
@@ -21,4 +21,8 @@ img {
     background-color: #4CAF50;
     color: white;
     border-color: #2E7D32 !important;
+}
+
+.center {
+    margin: auto;
 }

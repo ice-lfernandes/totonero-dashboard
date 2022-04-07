@@ -6,9 +6,10 @@ export class Team {
     shotOffGoal: number;
     cornerKick: number;
     redCard: number;
+    logo: string;
 
     constructor(name: string, score: number, ballPossession: number, shotOnGoal: number,
-        shotOffGoal: number, cornerKick: number, redCard: number) {
+        shotOffGoal: number, cornerKick: number, redCard: number, logo: string) {
         this.name = name;
         this.score = score;
         this.ballPossession = ballPossession;
@@ -16,6 +17,7 @@ export class Team {
         this.shotOffGoal = shotOffGoal;
         this.cornerKick = cornerKick;
         this.redCard = redCard;
+        this.logo = logo
     }
 
 }

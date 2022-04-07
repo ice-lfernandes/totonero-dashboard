@@ -15,13 +15,23 @@
                     </div>
                     <div class="row">
                         <div class="col col-4">
-                            <h5>{{game.home.name}}</h5>
+                            <div class="row">
+                                <h5>{{game.home.name}}</h5>
+                            </div>
+                            <div class="row">
+                                <img [src]="game.home.logo" alt="">
+                            </div>
                         </div>
-                        <div class="col col-4">
+                        <div class="col col-4 center">
                             <h5>{{game.home.score}} - {{game.away.score}}</h5>
                         </div>
                         <div class="col col-4">
-                            <h5>{{game.away.name}}</h5>
+                            <div class="row">
+                                <h5>{{game.away.name}}</h5>
+                            </div>
+                            <div class="row">
+                                <img [src]="game.away.logo" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>

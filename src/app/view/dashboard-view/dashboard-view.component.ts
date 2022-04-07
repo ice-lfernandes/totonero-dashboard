@@ -20,9 +20,9 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateMatches()
-    this.interval = setInterval(() => {
-      this.updateMatches();
-    }, intervalSeconds);
+    // this.interval = setInterval(() => {
+    //   this.updateMatches();
+    // }, intervalSeconds);
   }
 
 

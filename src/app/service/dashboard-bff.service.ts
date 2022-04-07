@@ -19,6 +19,7 @@ export class DashboardBffService {
               minutesOfMatch
               home {
                 name
+                logo
                 score
                 shotOnGoal
                 ballPossession
@@ -28,6 +29,7 @@ export class DashboardBffService {
               }
               away {
                 name
+                logo
                 score
                 shotOnGoal
                 ballPossession
