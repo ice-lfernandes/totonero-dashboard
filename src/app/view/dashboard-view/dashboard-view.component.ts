@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Match } from 'src/app/model/match.model';
-import { Team } from 'src/app/model/team.model';
+import { DashboardBffService } from 'src/app/service/dashboard-bff.service';
+import { Match } from '../../service/model/match.model';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -13,8 +13,17 @@ export class DashboardViewComponent implements OnInit {
   clazz: String = `card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary `
 
 
-  constructor() { }
+  constructor(private service: DashboardBffService) { }
 
+  ngOnInit(): void {
+    this.updateMatches()
+  }
+
+
+  async updateMatches() {
+    const result: Array<Match> = await this.service.getMatches();
+    this.matchs = result
+  }
 
   changeCardByScore(score: number): string {
     if (score < 900) {
@@ -26,97 +35,7 @@ export class DashboardViewComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.matchs.push(new Match(
-      1200,
-      "Campeonato Brasileiro",
-      "37:30",
-      new Team("Flamengo", 1, 65, 4, 7, 9, 0),
-      new Team("Vasco", 0, 35, 2, 4, 2, 1)
-    ), new Match(
-      1100,
-      "Campeonato Argentino",
-      "37:30",
-      new Team("River Plate", 1, 65, 4, 7, 9, 0),
-      new Team("Boca Juniors", 0, 35, 2, 4, 2, 1)
-    ), new Match(
-      950,
-      "Campeonato Espanhol",
-      "37:30",
-      new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-      new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-    ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      ),
-      new Match(
-        700,
-        "Campeonato Espanhol",
-        "37:30",
-        new Team("Real Madrid", 1, 65, 4, 7, 9, 0),
-        new Team("Barcelona", 0, 35, 2, 4, 2, 1)
-      )
-    )
-  }
-
+  
 }
+
+

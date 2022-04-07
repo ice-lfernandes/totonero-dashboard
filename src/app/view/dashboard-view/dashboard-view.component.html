@@ -10,75 +10,75 @@
                             <h6> {{game.leagueName}} </h6>
                         </div>
                         <div class="col colsm-6">
-                            <h6>Tempo de Jogo: {{game.minuteMatch}}</h6>
+                            <h6>Tempo de Jogo: {{game.minutesOfMatch}}</h6>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-4">
-                            <h5>{{game.homeTeam.name}}</h5>
+                            <h5>{{game.home.name}}</h5>
                         </div>
                         <div class="col col-4">
-                            <h5>{{game.homeTeam.score}} - {{game.awayTeam.score}}</h5>
+                            <h5>{{game.home.score}} - {{game.away.score}}</h5>
                         </div>
                         <div class="col col-4">
-                            <h5>{{game.awayTeam.name}}</h5>
+                            <h5>{{game.away.name}}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col col-3">
-                            <h5>{{game.homeTeam.ballPossession}}%</h5>
+                            <h5>{{game.home.ballPossession}}%</h5>
                         </div>
                         <div class="col col-6">
                             <h5>Posse de Bola</h5>
                         </div>
                         <div class="col col-3">
-                            <h5>{{game.awayTeam.ballPossession}}%</h5>
+                            <h5>{{game.away.ballPossession}}%</h5>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col col-3">
-                            <h5>{{game.homeTeam.shotsOnTarget}}</h5>
+                            <h5>{{game.home.shotOnGoal}}</h5>
                         </div>
                         <div class="col col-6">
                             <h5>Chutes no Gol</h5>
                         </div>
                         <div class="col col-3">
-                            <h5>{{game.awayTeam.shotsOffTarget}}</h5>
+                            <h5>{{game.away.shotOnGoal}}</h5>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col col-3">
-                            <h5>{{game.homeTeam.shotsOffTarget}}</h5>
+                            <h5>{{game.home.shotOffGoal}}</h5>
                         </div>
                         <div class="col col-6">
                             <h5>Chutes pra Fora</h5>
                         </div>
                         <div class="col col-3">
-                            <h5>{{game.awayTeam.shotsOffTarget}}</h5>
+                            <h5>{{game.away.shotOffGoal}}</h5>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col col-3">
-                            <h5>{{game.homeTeam.cornerKick}}</h5>
+                            <h5>{{game.home.cornerKick}}</h5>
                         </div>
                         <div class="col col-6">
                             <h5>Escanteios</h5>
                         </div>
                         <div class="col col-3">
-                            <h5>{{game.awayTeam.cornerKick}}</h5>
+                            <h5>{{game.away.cornerKick}}</h5>
                         </div>
                     </div>
                     <div class="row ">
                         <div class="col col-3">
-                            <h5>{{game.homeTeam.redCard}}</h5>
+                            <h5>{{game.home.redCard}}</h5>
                         </div>
                         <div class="col col-6">
                             <h5>Cartões Vermelhos</h5>
                         </div>
                         <div class="col col-3">
-                            <h5>{{game.awayTeam.redCard}}</h5>
+                            <h5>{{game.away.redCard}}</h5>
                         </div>
                     </div>
                 </div>
