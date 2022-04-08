@@ -26,3 +26,8 @@ img {
 .center {
     margin: auto;
 }
+
+.spinner-loading {
+    width: 3em;
+    height: 3em;
+}
