@@ -14,6 +14,7 @@
             <div class="col-sm-3 animate__animated animate__zoomIn" *ngFor="let game of matchs">
                 <div
                     class="card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary {{changeCardByScore(game.score)}}">
+                    <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} | APOSTA: {{game.betName}}</span>
                     <div class="card-header">
                         <div class="row">
                             <div class="col colsm-6">
@@ -104,12 +105,6 @@
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col col-6">
-                                SCORE: {{game.score}} - {{game.betName}}
-                            </div>
-                            <div class="col col-6">
-                                <button class="btn btn-success btn-sm">Bet 365</button>
-                            </div>
                         </div>
                     </div>
                 </div>

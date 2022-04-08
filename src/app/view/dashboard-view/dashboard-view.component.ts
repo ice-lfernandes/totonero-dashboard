@@ -50,6 +50,14 @@ export class DashboardViewComponent implements OnInit {
     }
   }
 
+  changeBadgeByScore(score: number): string {
+    if (score > 1000) {
+      return 'bg-success'
+    } else {
+      return 'bg-secondary'
+    }
+  }
+
 
 }
 
