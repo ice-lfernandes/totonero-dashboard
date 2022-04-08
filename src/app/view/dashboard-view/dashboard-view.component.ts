@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardBffService } from 'src/app/service/dashboard-bff.service';
 import { Match } from '../../service/model/match.model';
 
-const intervalSeconds = 10000
+const intervalSeconds = 5000
 
 @Component({
   selector: 'app-dashboard-view',
@@ -12,7 +12,8 @@ const intervalSeconds = 10000
 export class DashboardViewComponent implements OnInit {
 
   matchs: Array<Match> = []
-  clazz: String = `card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary `
+  noGamesAvaiable: boolean = false
+  clazz: String = `card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary`
   interval: any
 
 
@@ -27,6 +28,9 @@ export class DashboardViewComponent implements OnInit {
 
   async updateMatches() {
     const result: Array<Match> = await this.service.getMatches();
+    if (!result.length) {
+      this.noGamesAvaiable = true
+    }
     this.matchs = result.slice().sort((n1, n2) => n2.score - n1.score)
   }
 

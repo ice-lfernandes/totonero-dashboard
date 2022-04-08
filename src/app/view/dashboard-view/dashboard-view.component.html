@@ -2,8 +2,8 @@
     <br>
 
     <div class="row">
-        <ng-container *ngIf="matchs.length">
-            <div class="col-sm-3" *ngFor="let game of matchs">
+        <ng-container *ngIf="!noGamesAvaiable">
+            <div class="col-sm-3 animate__animated animate__zoomIn" *ngFor="let game of matchs">
                 <div
                     class="card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary {{changeCardByScore(game.score)}}">
                     <div class="card-header">
@@ -107,7 +107,7 @@
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="!matchs.length">
+        <ng-container *ngIf="noGamesAvaiable">
             <div class="alert alert-warning text-center">
                 Não há jogos que atendem os pré-requisitos
             </div>
