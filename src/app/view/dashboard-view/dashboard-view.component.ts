@@ -20,9 +20,9 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateMatches()
-    // this.interval = setInterval(() => {
-    //   this.updateMatches();
-    // }, intervalSeconds);
+    this.interval = setInterval(() => {
+      this.updateMatches();
+    }, intervalSeconds);
   }
 
 
@@ -32,7 +32,7 @@ export class DashboardViewComponent implements OnInit {
   }
 
   changeCardByScore(score: number): string {
-    if (score < 900) {
+    if (score < 850) {
       return ''
     } else if (score < 1000) {
       return 'card-game-wormming'
