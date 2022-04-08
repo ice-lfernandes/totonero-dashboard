@@ -17,6 +17,7 @@ export class DashboardBffService {
               matchId
               leagueName
               minutesOfMatch
+              betName
               home {
                 name
                 logo
