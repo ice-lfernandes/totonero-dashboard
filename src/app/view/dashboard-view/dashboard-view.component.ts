@@ -21,9 +21,9 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateMatches()
-    this.interval = setInterval(() => {
-      this.updateMatches();
-    }, intervalSeconds);
+    // this.interval = setInterval(() => {
+    //   this.updateMatches();
+    // }, intervalSeconds);
   }
 
   async updateMatches() {
@@ -55,6 +55,14 @@ export class DashboardViewComponent implements OnInit {
       return 'bg-success'
     } else {
       return 'bg-secondary'
+    }
+  }
+
+  verifyPeriodoMatch(minutes: string): string {
+    if (Number(minutes) < 45) {
+      return '1T'
+    } else {
+      return '2T'
     }
   }
 

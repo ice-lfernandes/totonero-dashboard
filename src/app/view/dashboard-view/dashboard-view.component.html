@@ -17,18 +17,20 @@
                     <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} | APOSTA: {{game.betName}}</span>
                     <div class="card-header">
                         <div class="row">
-                            <div class="col colsm-6">
+                            <div class="col col-8">
                                 <h6> {{game.leagueName}} </h6>
                             </div>
-                            <div class="col colsm-6">
-                                <h6>Tempo de Jogo: {{game.minutesOfMatch}}</h6>
+                            <div class="col col-4">
+                                <h6>Min: {{game.minutesOfMatch}}</h6>
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col col-12">
+                                <h6>{{game.home.name}} - {{game.away.name}}</h6>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col col-4">
-                                <div class="row">
-                                    <h5>{{game.home.name}}</h5>
-                                </div>
                                 <div class="row">
                                     <img [src]="game.home.logo" alt="">
                                 </div>
@@ -37,9 +39,6 @@
                                 <h5>{{game.home.score}} - {{game.away.score}}</h5>
                             </div>
                             <div class="col col-4">
-                                <div class="row">
-                                    <h5>{{game.away.name}}</h5>
-                                </div>
                                 <div class="row">
                                     <img [src]="game.away.logo" alt="">
                                 </div>
