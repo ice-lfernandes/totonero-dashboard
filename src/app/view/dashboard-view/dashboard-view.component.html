@@ -1,4 +1,27 @@
 <div class="container">
+    <div class="text-end mt-2">
+        
+        <button type="button" class="btn btn-outline-dark m-1" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample">
+            Filtros
+        </button>
+        <button type="button" class="btn btn-outline-dark m-1">
+            Pesquisar
+        </button>
+        
+        <br>
+        <br>
+
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card border-secondary shadow">
+                <div class="card-body">
+                    You can collapse this card by clicking Toggle
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <br>
 
     <div class="text-center" *ngIf="loading">
@@ -14,7 +37,8 @@
             <div class="col-sm-3 animate__animated animate__zoomIn" *ngFor="let game of matchs">
                 <div
                     class="card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary {{changeCardByScore(game.score)}}">
-                    <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} | APOSTA: {{game.betName}}</span>
+                    <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} |
+                        APOSTA: {{game.betName}}</span>
                     <div class="card-header">
                         <div class="row">
                             <div class="col col-8">
@@ -103,8 +127,9 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="row">
-                        </div>
+                        <a class="btn" href="https://www.bet365.com/#/HO/" target="_blank">
+                            <img src="assets/images/bet365-logo.png" alt="link Bet 365">
+                        </a>
                     </div>
                 </div>
             </div>

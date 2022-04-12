@@ -31,3 +31,7 @@ img {
     width: 3em;
     height: 3em;
 }
+
+.card-footer .btn {
+    height: 3em;
+}

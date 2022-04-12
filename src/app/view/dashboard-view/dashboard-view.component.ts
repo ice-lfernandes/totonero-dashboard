@@ -15,6 +15,7 @@ export class DashboardViewComponent implements OnInit {
   noGamesAvaiable: boolean = false
   loading: boolean = true
   interval: any
+  isCollapsed = true;
 
 
   constructor(private service: DashboardBffService) { }
