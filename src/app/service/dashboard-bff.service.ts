@@ -7,12 +7,12 @@ import { Match } from './model/match.model';
 })
 export class DashboardBffService {
 
-  private matchesQuery: QueryRef<{ matchesLocal: Match[] }>;
+  private matchesQuery: QueryRef<{ matches: Match[] }>;
 
   constructor(private apollo: Apollo) {
     this.matchesQuery = this.apollo.watchQuery({
       query: gql`query {
-            matchesLocal {
+            matches {
               score
               matchId
               leagueName
@@ -45,6 +45,6 @@ export class DashboardBffService {
 
   async getMatches(): Promise<Match[]> {
     const result = await this.matchesQuery.refetch();
-    return result.data.matchesLocal;
+    return result.data.matches;
   }
 }

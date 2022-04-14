@@ -1,14 +1,14 @@
 <div class="container">
     <div class="text-end mt-2">
-        
-        <button type="button" class="btn btn-outline-dark m-1" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-            aria-controls="collapseExample">
+
+        <button type="button" class="btn btn-outline-dark m-1" (click)="collapse.toggle()"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
             Filtros
         </button>
         <button type="button" class="btn btn-outline-dark m-1">
             Pesquisar
         </button>
-        
+
         <br>
         <br>
 
@@ -40,15 +40,12 @@
                     <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} |
                         APOSTA: {{game.betName}}</span>
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col col-8">
+                        <div class="row text-start">
+                            <div class="col col-12">
                                 <h6> {{game.leagueName}} </h6>
                             </div>
-                            <div class="col col-4">
-                                <h6>Min: {{game.minutesOfMatch}}</h6>
-                            </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-1">
                             <div class="col col-12">
                                 <h6>{{game.home.name}} - {{game.away.name}}</h6>
                             </div>
@@ -59,8 +56,9 @@
                                     <img [src]="game.home.logo" alt="">
                                 </div>
                             </div>
-                            <div class="col col-4 center">
-                                <h5>{{game.home.score}} - {{game.away.score}}</h5>
+                            <div class="col col-4 center mt-2">
+                                <h4>{{game.home.score}} - {{game.away.score}}</h4>
+                                <h6>Minutos: {{game.minutesOfMatch}}</h6>
                             </div>
                             <div class="col col-4">
                                 <div class="row">
