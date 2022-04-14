@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:8090/graphql',
+          uri: 'http://http://totonero-dashbord-service.us-east-1.elasticbeanstalk.com//graphql',
         }),
       };
     },
