@@ -11,12 +11,15 @@ import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormFilterComponent } from './view/dashboard-view/form-filter/form-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DashboardViewComponent
+    DashboardViewComponent,
+    FormFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     NgbModule,
     ApolloModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [{
     provide: APOLLO_OPTIONS,

@@ -1,0 +1,108 @@
+<div class="row">
+    <div class="text-start mt-2 p-2 col-2">
+        <button type="button" class="btn btn-dark m-1" (click)="open(content)">
+            Filtros
+            <fa-icon [icon]="faFilter" class="m-1"></fa-icon>
+        </button>
+
+        <ng-template #content let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Filtros</h4>
+                <button type="button" class="btn-close" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="container mt-2 mb-2">
+                        <div class="row">
+                            <div class="card col-3 filter-option">
+                                <div class="card-body">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card col-3 filter-option">
+                                <div class="card-body">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card col-3 filter-option">
+                                <div class="card-body">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn btn-dark" (click)="modal.close('Save click')">
+                    Pesquisar
+                    <fa-icon [icon]="faSearch" class="m-1"></fa-icon>
+                </button>
+            </div>
+        </ng-template>
+    </div>
+    <div class="text-start mt-2 p-2 col-10">
+        <!-- <span class="badge rounded-pill bg-dark me-2 mb-2 shadow">Mais de 65%</span>
+        <span class="badge rounded-pill bg-dark me-2 mb-2 shadow">Mais de 10 Chutes</span>
+        <span class="badge rounded-pill bg-dark me-2 mb-2 shadow">Pelo menos 1 expulsão</span>
+        <span class="badge rounded-pill bg-dark me-2 mb-2 shadow">Score maior que 1000</span> -->
+
+    </div>
+</div>
+
+
+
+
+<!-- <div class="card border-secondary shadow text-center">
+    <div class="container mt-2 mb-2">
+        <div class="row">
+            <div class="card col-3 filter-option">
+                <div class="card-body">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card col-3 filter-option">
+                <div class="card-body">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card col-3 filter-option">
+                <div class="card-body">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->

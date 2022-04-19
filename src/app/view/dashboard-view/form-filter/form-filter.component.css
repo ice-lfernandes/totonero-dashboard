@@ -1,0 +1,9 @@
+.filter-option {
+    border: 0px !important;
+}
+
+.badge-outline {
+    color: #212529;
+    border: 2px solid #212529;
+    background-color: transparent;
+}

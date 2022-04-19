@@ -1,26 +1,5 @@
 <div class="container">
-    <div class="text-end mt-2">
-
-        <button type="button" class="btn btn-outline-dark m-1" (click)="collapse.toggle()"
-            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-            Filtros
-        </button>
-        <button type="button" class="btn btn-outline-dark m-1">
-            Pesquisar
-        </button>
-
-        <br>
-        <br>
-
-        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-            <div class="card border-secondary shadow">
-                <div class="card-body">
-                    You can collapse this card by clicking Toggle
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <app-form-filter></app-form-filter>
 
     <br>
 
@@ -125,7 +104,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a class="btn" href="https://www.bet365.com/#/HO/" target="_blank">
+                        <a href="{{game.urlBet365}}" class="btn" target="_blank">
                             <img src="assets/images/bet365-logo.png" alt="link Bet 365">
                         </a>
                     </div>

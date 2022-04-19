@@ -18,6 +18,7 @@ export class DashboardBffService {
               leagueName
               minutesOfMatch
               betName
+              urlBet365
               home {
                 name
                 logo

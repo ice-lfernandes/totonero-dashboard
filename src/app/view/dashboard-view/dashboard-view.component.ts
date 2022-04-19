@@ -17,7 +17,6 @@ export class DashboardViewComponent implements OnInit {
   interval: any
   isCollapsed = true;
 
-
   constructor(private service: DashboardBffService) { }
 
   ngOnInit(): void {
@@ -36,7 +35,10 @@ export class DashboardViewComponent implements OnInit {
     } else {
       this.noGamesAvaiable = false
     }
-    this.matchs = result.slice().sort((n1, n2) => n2.score - n1.score)
+    this.matchs = result
+      .slice()
+      .sort((n1, n2) => n2.score - n1.score)
+      // .filter(match => match.urlBet365 != null) comentado ate resolver logos
 
     this.loading = false
   }
