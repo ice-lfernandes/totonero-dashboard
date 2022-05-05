@@ -1,0 +1,153 @@
+<div class="text-start mt-2 p-2 col-15">
+    <button type="button" class="btn btn-dark m-1" (click)="open(contentFilter, 'modal-filter')">
+        Filtros
+        <fa-icon [icon]="faFilter" class="m-1"></fa-icon>
+    </button>
+</div>
+
+<ng-template #contentFilter let-modal class="shadow">
+    <div class="modal-header header-modal-bg">
+        <h4 class="modal-title" id="modal-filter">Filtros</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="container mt-2 mb-2">
+                <ul class="nav nav-tabs justify-content-center" id="tabStats" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">Estatisticas</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">Apostas</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="tabMarket">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-7">
+                                    <div class="row">
+                                        <label for="inputScore" class="col-sm-3 col-form-label mt-1">Score</label>
+                                        <div class="col-sm-4 p-2">
+                                            <select class="form-select form-select-sm">
+                                                <option value="1" selected>Mais de</option>
+                                                <option value="2">Menos de</option>
+                                                <option value="3">Igual a</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4 p-2">
+                                            <input type="number" class="form-control form-control-sm"
+                                                id="inputScore">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-2 p-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Com expulsão
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-7">
+                                    <div class="row">
+                                        <label for="inputChutesGol" class="col-sm-3 col-form-label mt-1">Chutes no
+                                            Gol</label>
+                                        <div class="col-sm-4 p-2">
+                                            <select class="form-select form-select-sm">
+                                                <option value="1" selected>Mais de</option>
+                                                <option value="2">Menos de</option>
+                                                <option value="3">Igual a</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4 p-2">
+                                            <input type="number" class="form-control form-control-sm"
+                                                id="inputChutesGol">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-2 p-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="checkboxFavoritoPerdendo">
+                                        <label class="form-check-label" for="checkboxFavoritoPerdendo">
+                                            Favorito Perdendo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-7">
+                                    <div class="row">
+                                        <label for="inputChutes" class="col-sm-3 col-form-label mt-1">Chutes</label>
+                                        <div class="col-sm-4 p-2">
+                                            <select class="form-select form-select-sm">
+                                                <option value="1" selected>Mais de</option>
+                                                <option value="2">Menos de</option>
+                                                <option value="3">Igual a</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4 p-2">
+                                            <input type="number" class="form-control form-control-sm"
+                                                id="inputChutes">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-7">
+                                    <div class="row">
+                                        <label for="inputChutesGol" class="col-sm-3 col-form-label mt-1">Chutes no
+                                            Gol</label>
+                                        <div class="col-sm-4 p-2">
+                                            <select class="form-select form-select-sm">
+                                                <option value="1" selected>Mais de</option>
+                                                <option value="2">Menos de</option>
+                                                <option value="3">Igual a</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4 p-2">
+                                            <input type="number" class="form-control form-control-sm"
+                                                id="inputChutesGol">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col col-7">
+                                <div class="row">
+                                    <label for="inputChutes" class="col-sm-3 col-form-label mt-1">Tipos de
+                                        Aposta</label>
+                                    <div class="col-sm-4 p-2">
+                                        <select class="form-select form-select-sm">
+                                            <option value="1" selected>Limite 1T</option>
+                                            <option value="2">Plus 1T</option>
+                                            <option value="3">Limite 2T</option>
+                                            <option value="4">Race 7</option>
+                                            <option value="5">Race 9</option>
+                                            <option value="6">Limite 2T</option>
+                                            <option value="7">Plus 2T</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn btn-dark" (click)="modal.close('Save click')">
+            Pesquisar
+            <fa-icon [icon]="faSearch" class="m-1"></fa-icon>
+        </button>
+    </div>
+</ng-template>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavLateralComponent } from './nav-lateral.component';
+import { TableGamesComponent } from './table-games.component';
 
-describe('NavLateralComponent', () => {
-  let component: NavLateralComponent;
-  let fixture: ComponentFixture<NavLateralComponent>;
+describe('TableGamesComponent', () => {
+  let component: TableGamesComponent;
+  let fixture: ComponentFixture<TableGamesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavLateralComponent ]
+      declarations: [ TableGamesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavLateralComponent);
+    fixture = TestBed.createComponent(TableGamesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

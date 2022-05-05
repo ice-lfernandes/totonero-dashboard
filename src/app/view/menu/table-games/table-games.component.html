@@ -1,0 +1,39 @@
+<div class="text-start mt-2 p-2 col-2">
+    <button type="button" class="btn btn-dark m-1" (click)="open(contentTableGames, 'modal-table-games')">
+        Jogos ao Vivo
+        <fa-icon [icon]="faTableList" class="m-1"></fa-icon>
+    </button>
+</div>
+
+<ng-template #contentTableGames let-modal class="shadow">
+    <div class="modal-header header-modal-bg">
+        <h4 class="modal-title" id="modal-table-games">Tabela de Jogos ao Vivo</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Tempo</th>
+                    <th scope="col">Liga</th>
+                    <th scope="col">Mandante</th>
+                    <th scope="col">Gols</th>
+                    <th scope="col">Gols</th>
+                    <th scope="col">Visitante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of listMatchesAlive">
+                    <td>{{match.minutes}}</td>
+                    <td>{{match.nameLeague}}</td>
+                    <td>{{match.nameTeamHome}}</td>
+                    <td>{{match.scoreTeamHome}}</td>
+                    <td>{{match.scoreTeamAway}}</td>
+                    <td>{{match.nameTeamAway}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</ng-template>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-form-filter',
@@ -14,14 +14,14 @@ export class FormFilterComponent implements OnInit {
   faFilter = faFilter
   faSearch = faSearch
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
-  open(content: any) {
+  open(content: any, modalId: string) {
     this.modalService.open(content, {
-      ariaLabelledBy: 'modal-basic-title',
+      ariaLabelledBy: modalId,
       size: 'xl'
     }).result
   }

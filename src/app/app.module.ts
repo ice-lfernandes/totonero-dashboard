@@ -4,22 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './shared/header/header.component';
-import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
 import { FormsModule } from '@angular/forms';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormFilterComponent } from './view/dashboard-view/form-filter/form-filter.component';
+
+
+import { FormFilterComponent } from './view/menu/form-filter/form-filter.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
+import { TableGamesComponent } from './view/menu/table-games/table-games.component';
+import { MenuComponent } from './view/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardViewComponent,
-    FormFilterComponent
+    FormFilterComponent,
+    TableGamesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,7 @@ import { FormFilterComponent } from './view/dashboard-view/form-filter/form-filt
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:8090/graphql',
+          uri: 'http://totonero-dashbord-service.us-east-1.elasticbeanstalk.com/graphql',
         }),
       };
     },
