@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { DashboardBffService } from 'src/app/service/dashboard-bff.service';
 import { Match } from '../../service/model/match.model';
 
@@ -16,6 +17,7 @@ export class DashboardViewComponent implements OnInit {
   loading: boolean = true
   interval: any
   isCollapsed = true;
+  faTelegram = faTelegram
 
   constructor(private service: DashboardBffService) { }
 

@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="card form-register shadow border-secondary">
+        <div class="card-header">
+            <h2>Montagem Score</h2>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-3">
+                        <a placement="top"
+                            ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelect">
+                                <option selected disabled>Bets Cadastradas</option>
+                                <option value="1">Limite 1T</option>
+                                <option value="2">Limite 2T</option>
+                                <option value="3">Race 7</option>
+                                <option value="3">Race 9</option>
+                            </select>
+                            <label for="floatingSelect">Bets Cadastradas</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <h2>Regras</h2>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputChoiceFavoriteByBallPossession"
+                                placeholder="Porcentagem de posse de bola para definir favorito">
+                            <label for="inputChoiceFavoriteByBallPossession" class="form-label">Porcentagem de posse de bola para definir favorito</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está
+                                perdendo</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteTieing"
+                                placeholder="Pontos quando favorito está empatando">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está
+                                empatando</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de escanteios do favorito</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de chutes no gol do favorito</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de chutes para fora do favorito</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quantidade de ataques perigosos favorito</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos com 1 expulsão da zebra</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
+                                placeholder="Pontos quando favorito está perdendo">
+                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos com 2 expulsão da zebra</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-lg btn-dark">Salvar</button>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
 import { TableGamesComponent } from './view/menu/table-games/table-games.component';
 import { MenuComponent } from './view/menu/menu.component';
+import { RegisterBetsViewComponent } from './view/register-bets-view/register-bets-view.component';
+import { RegisterScoreViewComponent } from './view/register-score-view/register-score-view.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MenuComponent } from './view/menu/menu.component';
     DashboardViewComponent,
     FormFilterComponent,
     TableGamesComponent,
-    MenuComponent
+    MenuComponent,
+    RegisterBetsViewComponent,
+    RegisterScoreViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="card form-register shadow border-secondary">
+        <div class="card-header">
+            <h2>Cadastro Bet</h2>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-3">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputbetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="inputNameBet" placeholder="Nome da Aposta">
+                            <label for="inputNameBet" class="form-label">Nome da Aposta</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputScoreMinimum}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreAlmostEntry"
+                                placeholder="Valor Score (Perto do Padrão de Entrada)">
+                            <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score (Perto do Padrão de
+                                Entrada)</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputScoreMaximun}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputScoreAlmostEntry"
+                                placeholder="Valor Score (Padrão de Entrada)">
+                            <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score (Padrão de
+                                Entrada)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputMatchPeriod}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example" id="selectPeriod">
+                                <option selected disabled>Período do Jogo</option>
+                                <option value="1">1T</option>
+                                <option value="2">2T</option>
+                            </select>
+                            <label for="selectPeriod">Período do Jogo</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputMinimumMinuteAnalysis}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="inputMinimumTimeAnalysis"
+                                placeholder="Tempo Mínimo de Análise da Aposta (Minutos)">
+                            <label for="inputMinimumTimeAnalysis" class="form-label">Tempo Mínimo de Análise da Aposta
+                                (Minutos)</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputMinimumMaximunAnalysis}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="inputMaximumTimeAnalysis"
+                                placeholder="Tempo Máximo de Análise da Aposta (Minutos)">
+                            <label for="inputMaximumTimeAnalysis" class="form-label">Tempo Máximo de Análise da Aposta
+                                (Minutos)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputQuantityMaximunOfGoals}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="inputMaxAdvatange"
+                                placeholder="Quantidade de Gols Máxima de Desvantagem">
+                            <label for="inputNameBet" class="form-label">Quantidade de Gols Máxima de
+                                Desvantagem</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infoInputTemplateMessageTelegram}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Template de Mensagem Telegram</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a placement="top"
+                            ngbTooltip="{{infocheckAutomaticaSendMessage}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Envio automático de mensagem pelo Telegram
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-lg btn-dark">Cadastrar</button>
+        </div>
+    </div>
+</div>

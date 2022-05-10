@@ -11,3 +11,23 @@
 .header-text {
     color: white;
 }
+
+.header-logo {
+    height: 5em;
+}
+
+.nav-color a {
+    color: #c2c2c2 !important;
+}
+
+.navbar {
+    margin-top: 0.5em !important;
+    margin-left: 1em !important;
+}
+
+.split-div {
+    resize: vertical;
+    overflow: auto;
+    border: 1px solid;
+    border-color: #c2c2c2;
+}

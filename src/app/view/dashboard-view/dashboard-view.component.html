@@ -104,9 +104,16 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="{{game.urlBet365}}" class="btn" target="_blank">
-                            <img src="assets/images/bet365-logo.png" alt="link Bet 365">
-                        </a>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{{game.urlBet365}}" class="btn me-1" target="_blank">
+                                    <img src="assets/images/bet365-logo.png" alt="link Bet 365">
+                                </a>
+                            </div>
+                            <div class="col-6 mt-2">
+                                <fa-icon [icon]="faTelegram" size="2x" [styles]="{'color': '#0088cc'}"></fa-icon>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
