@@ -18,7 +18,10 @@ export class RegisterBetsViewComponent implements OnInit {
   infoInputQuantityMaximunOfGoals = `Quantidade de gols máxima de desvantagem do favorito para jogo ser analisado`
   infoInputTemplateMessageTelegram = `Template de mensagem a ser enviada para tip do Telegram`
   infocheckAutomaticaSendMessage = `Habilita envio automático de tip quando jogo atinge score de entrada`
-
+  infoInputChoiceFavorite = `Define a porcentagem de posse de bola necessária para definir o favorito do jogo. Exemplo: Valor 65%, caso algum time tenha 65 ou mais de posse de bola, será considerado o favorito. Caso contráro não haverá favorito na partida`
+  infoInputScoreFavoriteLossing = `Define os pontos que serão somados ao score quando o favorito estiver perdendo`
+  infoInputScoreFavoriteTieing = `Define os pontos que serão somados ao score quando o favorito estiver empatando`
+  
   constructor() { }
 
   ngOnInit(): void {

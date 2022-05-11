@@ -7,11 +7,10 @@
             <form>
                 <div class="row">
                     <div class="col-3">
-                        <a placement="top"
-                            ngbTooltip="{{infoSelectBetName}}">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
                             <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
                         </a>
-                        <div class="form-floating">
+                        <div class="form-floating shadow">
                             <select class="form-select" id="floatingSelect">
                                 <option selected disabled>Bets Cadastradas</option>
                                 <option value="1">Limite 1T</option>
@@ -25,80 +24,92 @@
                 </div>
                 <br>
                 <div class="row">
-                    <h2>Regras</h2>
+                    <h3>Estatisticas de Score Disponíveis</h3>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select shadow" aria-label="Default select example" id="selectStats">
+                                <option selected disabled>Estatisticas</option>
+                                <option *ngFor="let stat of statsAvaiable" [value]="stat.value">{{stat.description}}
+                                </option>
+                            </select>
+                            <label for="selectStats">Estatisticas</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select shadow" aria-label="Default select example" id="selectStats">
+                                <option selected disabled>Time</option>
+                                <option value="1">Favorito</option>
+                                <option value="2">Zebra</option>
+                            </select>
+                            <label for="selectStats">Time</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3 shadow">
+                            <input type="number" class="form-control" id="inputValor" placeholder="Valor">
+                            <label for="inputValor" class="form-label">Valor</label>
+                        </div>
+                    </div>
+                    <div class="col-15">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3 shadow">
+                            <input type="number" class="form-control" id="inputScore" placeholder="Score">
+                            <label for="inputScore" class="form-label">Score</label>
+                        </div>
+                    </div>
+                    <div class="col-15">
+                        <a type="button" class="mt-4" (click)="addRule()">
+                            <fa-icon [icon]="faPlusCircle" size="2x"></fa-icon>
+                        </a>
+                    </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputChoiceFavoriteByBallPossession"
-                                placeholder="Porcentagem de posse de bola para definir favorito">
-                            <label for="inputChoiceFavoriteByBallPossession" class="form-label">Porcentagem de posse de bola para definir favorito</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está
-                                perdendo</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteTieing"
-                                placeholder="Pontos quando favorito está empatando">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está
-                                empatando</label>
-                        </div>
-                    </div>
+                    <h3>Estatisticas de Score Cadastradas</h3>
                 </div>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de escanteios do favorito</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de chutes no gol do favorito</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos número de chutes para fora do favorito</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos quantidade de ataques perigosos favorito</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos com 1 expulsão da zebra</label>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="inputScoreFavoriteLossing"
-                                placeholder="Pontos quando favorito está perdendo">
-                            <label for="inputScoreFavoriteLossing" class="form-label">Pontos com 2 expulsão da zebra</label>
-                        </div>
-                    </div>
-                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ações</th>
+                            <th scope="col">Estatstica</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let statSelected of statsSelected">
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <a type="button" (click)="removeRule(statSelected)">
+                                            <fa-icon [icon]="faMinusCircle" size="lg"></fa-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{statSelected.stat.description}}</td>
+                            <td>{{statSelected.team}}</td>
+                            <td>{{statSelected.value}}</td>
+                            <td>{{statSelected.score}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </form>
         </div>
         <div class="card-footer text-center">
