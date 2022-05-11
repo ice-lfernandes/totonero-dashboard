@@ -36,10 +36,10 @@ export class RegisterScoreViewComponent implements OnInit {
 
   // dados api
   statsSelected: Array<StatSelected> = [
-    new StatSelected(new Stat(4, 'Chutes no Gol'), 'Favorito', 7, 100),
-    new StatSelected(new Stat(3, 'Chutes'), 'Favorito', 10, 200),
-    new StatSelected(new Stat(12, 'Cartão Vermelho'), 'Zebra', 1, 200),
-    new StatSelected(new Stat(14, 'Posse de Bola %'), 'Favorito', 70, 300)
+    new StatSelected(new Stat(4, 'Chutes no Gol'), 'Favorito', 7, false, 100),
+    new StatSelected(new Stat(3, 'Chutes'), 'Favorito', 10, false, 200),
+    new StatSelected(new Stat(12, 'Cartão Vermelho'), 'Zebra', 1, false, 200),
+    new StatSelected(new Stat(14, 'Posse de Bola %'), 'Favorito', 70, true, 300)
   ]
 
   // campos input
@@ -52,7 +52,7 @@ export class RegisterScoreViewComponent implements OnInit {
   }
 
   addRule() {
-    this.statsSelected.push(new StatSelected(new Stat(14, 'Posse de Bola %'), 'Favorito', 70, 300))
+    this.statsSelected.push(new StatSelected(new Stat(14, 'Posse de Bola %'), 'Favorito', 70, true, 300))
   }
 
   removeRule(statSelected: StatSelected) {

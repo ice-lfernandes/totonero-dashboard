@@ -40,6 +40,7 @@
                             <label for="selectStats">Estatisticas</label>
                         </div>
                     </div>
+
                     <div class="col-2">
                         <a placement="top" ngbTooltip="{{infoSelectBetName}}">
                             <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
@@ -53,7 +54,8 @@
                             <label for="selectStats">Time</label>
                         </div>
                     </div>
-                    <div class="col-2">
+
+                    <div class="col-15">
                         <a placement="top" ngbTooltip="{{infoSelectBetName}}">
                             <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
                         </a>
@@ -62,6 +64,40 @@
                             <label for="inputValor" class="form-label">Valor</label>
                         </div>
                     </div>
+                    <div class="col-2">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select shadow" aria-label="Default select example" id="inputComparable">
+                                <option selected disabled>Comparação</option>
+                                <option value="1">Maior</option>
+                                <option value="2">Maior ou Igual</option>
+                                <option value="3">Menor</option>
+                                <option value="4">Menor ou Igual</option>
+                                <option value="5">Igual</option>
+                            </select>
+                            <label for="inputComparable">Comparação</label>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating">
+                            <select class="form-select shadow" aria-label="Default select example" id="inputMandatory">
+                                <option selected disabled>Obrigatório</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                            <label for="inputMandatory">Obrigatório</label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
                     <div class="col-15">
                         <a placement="top" ngbTooltip="{{infoSelectBetName}}">
                             <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
@@ -71,23 +107,28 @@
                             <label for="inputScore" class="form-label">Score</label>
                         </div>
                     </div>
-                    <div class="col-15">
-                        <a type="button" class="mt-4" (click)="addRule()">
-                            <fa-icon [icon]="faPlusCircle" size="2x"></fa-icon>
-                        </a>
+
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <button type="button" class="btn btn-dark" (click)="addRule()">
+                            Adicionar Regra
+                            <fa-icon [icon]="faPlusCircle"></fa-icon>
+                        </button>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <h3>Estatisticas de Score Cadastradas</h3>
                 </div>
-                <table class="table table-striped">
+                <table class="table table-striped border-secondary">
                     <thead>
                         <tr>
                             <th scope="col">Ações</th>
                             <th scope="col">Estatstica</th>
                             <th scope="col">Time</th>
                             <th scope="col">Valor</th>
+                            <th scope="col">Obrigatório</th>
                             <th scope="col">Score</th>
                         </tr>
                     </thead>
@@ -105,6 +146,7 @@
                             <td>{{statSelected.stat.description}}</td>
                             <td>{{statSelected.team}}</td>
                             <td>{{statSelected.value}}</td>
+                            <td>{{statSelected.mandatory}}</td>
                             <td>{{statSelected.score}}</td>
                         </tr>
 
