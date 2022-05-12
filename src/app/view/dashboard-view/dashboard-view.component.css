@@ -35,3 +35,8 @@ img {
 .card-footer .btn {
     height: 3em;
 }
+
+.telegram-logo {
+    color: '#0088cc';
+    background-color: white;
+}

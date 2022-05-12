@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
-import { Match } from './model/match.model';
+import { Match } from './alert/model/match.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,8 @@ export class DashboardBffService {
                 logo
                 score
                 shotOnGoal
+                attacks
+                dangerousAttack
                 ballPossession
                 shotOffGoal
                 redCard
@@ -34,6 +36,8 @@ export class DashboardBffService {
                 logo
                 score
                 shotOnGoal
+                attacks
+                dangerousAttack
                 ballPossession
                 shotOffGoal
                 redCard

@@ -1,0 +1,15 @@
+.form-register {
+    margin-top: 2em;
+}
+
+.card-header {
+    background-color: #ced4da;
+}
+
+.split-div {
+    resize: vertical;
+    overflow: auto;
+    border: 1px solid;
+    border-color: #c2c2c2;
+    height: 100%;
+}

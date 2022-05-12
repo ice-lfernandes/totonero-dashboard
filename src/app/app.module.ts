@@ -19,6 +19,10 @@ import { TableGamesComponent } from './view/menu/table-games/table-games.compone
 import { MenuComponent } from './view/menu/menu.component';
 import { RegisterBetsViewComponent } from './view/register-bets-view/register-bets-view.component';
 import { RegisterScoreViewComponent } from './view/register-score-view/register-score-view.component';
+import { RegisterTeamScoreViewComponent } from './view/register-team-score-view/register-team-score-view.component';
+import { RegisterLeagueScoreViewComponent } from './view/register-league-score-view/register-league-score-view.component';
+import { RegisterBlackListViewComponent } from './view/register-black-list-view/register-black-list-view.component';
+import { MyBetsViewComponent } from './view/my-bets-view/my-bets-view.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { RegisterScoreViewComponent } from './view/register-score-view/register-
     TableGamesComponent,
     MenuComponent,
     RegisterBetsViewComponent,
-    RegisterScoreViewComponent
+    RegisterScoreViewComponent,
+    RegisterTeamScoreViewComponent,
+    RegisterLeagueScoreViewComponent,
+    RegisterBlackListViewComponent,
+    MyBetsViewComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <div class="header-logo text-start col col-1">
       <img src="assets/images/logo_medium.png" class="image-logo" alt="">
     </div>
-    <div class="container col col-10">
+    <div class="container col col-9">
       <nav class="navbar navbar-expand-lg nav-color">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,14 +16,20 @@
               </li>
               <!-- <div class="split-div"></div> -->
               <li class="nav-item">
-                <a class="nav-link" routerLink="/cadastro-bets">Cadastro Bets</a>
+                <a class="nav-link" routerLink="/minhas-bets">Mercado de Apostas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/cadastro-bets">Cadastro Apostas</a>
               </li>
               <!-- <div class="split-div"></div> -->
               <li class="nav-item">
                 <a class="nav-link" routerLink="/cadastro-score">Montagem Score</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/cadastro-score">Times Vip</a>
+                <a class="nav-link" routerLink="/cadastro-time-score">Cadastro Score Times</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/cadastro-liga-score">Cadastro Score Ligas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/cadastro-score">Black List</a>
@@ -32,6 +38,11 @@
           </div>
         </div>
       </nav>
+    </div>
+    <div class="col-1 mt-4">
+      <a href="">
+        <fa-icon [icon]="faCircleUser" size="2x" style="color: #c2c2c2"></fa-icon>
+      </a>
     </div>
   </div>
 </div>

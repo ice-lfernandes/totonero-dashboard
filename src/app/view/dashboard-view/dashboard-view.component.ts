@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { DashboardBffService } from 'src/app/service/dashboard-bff.service';
-import { Match } from '../../service/model/match.model';
+import { Match } from '../../service/alert/model/match.model';
 
 const intervalSeconds = 30000
 

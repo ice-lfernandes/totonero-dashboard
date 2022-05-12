@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card form-register shadow border-secondary">
+        <div class="card-header">
+            <h2>Cadastro Score Times</h2>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-3">
+                        <a placement="top" ngbTooltip="Selecione o time">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating shadow">
+                            <select class="form-select" id="floatingSelect">
+                                <option selected disabled>Time</option>
+                                <option value="1">Flamengo</option>
+                                <option value="2">Vasco</option>
+                                <option value="3">Fluminense</option>
+                                <option value="3">Botafogo</option>
+                            </select>
+                            <label for="floatingSelect">Times cadastrados</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <a placement="top" ngbTooltip="Defini se o time terá o valor do score somado ou subtraido">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating shadow">
+                            <select class="form-select" id="floatingSelect">
+                                <option selected disabled>Definição do score</option>
+                                <option value="1">Soma</option>
+                                <option value="2">Subtração</option>
+                            </select>
+                            <label for="floatingSelect">Definição do score</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <a placement="top" ngbTooltip="Defini o valor do score">
+                            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+                        </a>
+                        <div class="form-floating mb-3 shadow">
+                            <input type="number" class="form-control" id="inputValor" placeholder="Score">
+                            <label for="inputValor" class="form-label">Score</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-lg btn-dark">Salvar</button>
+        </div>
+    </div>
+</div>
