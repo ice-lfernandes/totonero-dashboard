@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
-import { Match } from './alert/model/match.model';
+import { Match } from '../alert/model/match.model';
 
 @Injectable({
   providedIn: 'root'

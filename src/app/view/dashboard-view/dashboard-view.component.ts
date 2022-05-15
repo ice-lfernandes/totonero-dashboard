@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { DashboardBffService } from 'src/app/service/dashboard-bff.service';
+import { DashboardBffService } from 'src/app/service/dashboard/dashboard-bff.service';
 import { Match } from '../../service/alert/model/match.model';
 
 const intervalSeconds = 30000
@@ -40,7 +40,7 @@ export class DashboardViewComponent implements OnInit {
     this.matchs = result
       .slice()
       .sort((n1, n2) => n2.score - n1.score)
-      // .filter(match => match.urlBet365 != null) comentado ate resolver logos
+    // .filter(match => match.urlBet365 != null) comentado ate resolver logos
 
     this.loading = false
   }
@@ -71,7 +71,13 @@ export class DashboardViewComponent implements OnInit {
     }
   }
 
-
+  verifyLinkBetDisabled(url: string): string {
+    if (url == '') {
+      return 'disabled'
+    } else {
+      return ''
+    }
+  }
 }
 
 

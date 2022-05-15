@@ -1,0 +1,52 @@
+.card-header {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.split-div {
+    resize: vertical;
+    overflow: auto;
+    border: 1px solid;
+    border-color: #c2c2c2;
+    height: 100%;
+}
+
+.text-on-pannel {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    margin-left: 20px;
+    padding: 3px 5px;
+    position: absolute;
+    margin-top: -47px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+}
+
+.panel {
+    /* for text on pannel */
+    border: solid 2px #ced4da !important;
+    padding: 0 20px 20px 0px;
+    border-bottom: none;
+}
+
+.panel-body {
+    padding-top: 30px !important;
+}
+
+.btn-card {
+    background-color: #4CAF50;
+    color: white
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link.active {
+    color: #F44336 !important;
+    border-color: #F44336 #F44336 #fff !important;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #F44336 !important;
+}

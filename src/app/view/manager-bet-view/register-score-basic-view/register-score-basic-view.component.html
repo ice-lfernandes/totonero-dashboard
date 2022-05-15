@@ -1,0 +1,81 @@
+<form>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <select class="form-select shadow border-secondary" aria-label="Default select example" id="selectStats"
+                    (change)="chooseStrategy($event)">
+                    <option selected disabled>Estratégia para escolha do Favorito</option>
+                    <option value="1">Posse de Bola %</option>
+                    <option value="2">Ataques</option>
+                    <option value="3">Ataques Perigosos</option>
+                </select>
+                <label for="floatingSelect">Estratégia para escolha do Favorito</label>
+            </div>
+        </div>
+        <div class="col-5">
+            <ng-container *ngIf="strategyBallPossession">
+                <div class="form-floating mb-3 shadow">
+                    <input type="number" name="strategyFavoriteChoose" class="form-control border-secondary"
+                        id="inputStrategyFavoriteChoose" placeholder="Valor da posse de bola % para definir Favorito">
+                    <label for="inputStrategyFavoriteChoose" class="form-label">Valor da posse de bola % para definir
+                        Favorito</label>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="strategyDangerousAttacks">
+                <div class="form-floating mb-3 shadow">
+                    <input type="number" name="strategyFavoriteChoose" class="form-control border-secondary"
+                        id="inputStrategyFavoriteChoose"
+                        placeholder="Diferença de Ataques Perigosos para definir Favorito">
+                    <label for="inputStrategyFavoriteChoose" class="form-label">Diferença de Ataques Perigosos para
+                        definir Favorito</label>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="strategyAttacks">
+                <div class="form-floating mb-3 shadow">
+                    <input type="number" name="strategyFavoriteChoose" class="form-control border-secondary"
+                        id="inputStrategyFavoriteChoose" placeholder="Diferença de Ataques para definir Favorito">
+                    <label for="inputStrategyFavoriteChoose" class="form-label">Diferença de Ataques para
+                        definir Favorito</label>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input type="number" class="form-control border-secondary" id="inputScoreFavoriteLossing"
+                    [value]="getRuleByName(FAVORITE_TEAM_LOSING_RULE)?.score"
+                    (input)="getRuleByName(FAVORITE_TEAM_LOSING_RULE)?.score" name="valueScoreFavoriteLossing"
+                    id="inputminimumOdd" placeholder="Pontos quando favorito está perdendo">
+                <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está
+                    perdendo</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input type="number" class="form-control border-secondary" id="inputScoreFavoriteTying"
+                    [value]="getRuleByName(FAVORITE_TEAM_TYING)?.score"
+                    (input)="getRuleByName(FAVORITE_TEAM_TYING)?.score" name="valueScoreFavoriteTying"
+                    placeholder="Pontos quando favorito está empatando">
+                <label for="inputScoreFavoriteTieng" class="form-label">Pontos quando favorito está
+                    empatando</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input type="number" class="form-control border-secondary" id="inputScoreFavoriteWinning"
+                    [value]="getRuleByName(FAVORITE_TEAM_WINNING_RULE)?.score"
+                    (input)="getRuleByName(FAVORITE_TEAM_WINNING_RULE)?.score" name="valueScoreFavoriteWinning"
+                    placeholder="Pontos quando favorito está ganhando">
+                <label for="inputScoreFavoriteWinning" class="form-label">Pontos quando favorito está
+                    ganhando</label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <h5>Eventos da Partida</h5>
+    </div>
+    <div class="row">
+    </div> -->
+
+</form>

@@ -1,0 +1,231 @@
+<div class="container">
+
+    <form>
+        <div class="row mt-3">
+            <div class="col col-3">
+                <div class="form-floating shadow">
+                    <select class="form-select shadow border-secondary" aria-label="Default select example"
+                        id="selectStats" [(ngModel)]="betIdSelected" [ngModelOptions]="{standalone:true}">
+                        <option selected disabled>Bets Cadastradas</option>
+                        <option *ngFor="let bet of bets" [value]="bet.id">{{bet.name}} -
+                            {{bet.periodMatch }}
+                        </option>
+                    </select>
+                    <label for="floatingSelect">Bets Cadastradas</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                <button type="button" class="btn btn-dark me-3" (click)="visualizeBetType()">
+                    Visualizar
+                    <fa-icon [icon]="faEye"></fa-icon>
+                </button>
+                <button type="button" class="btn btn-dark me-3">
+                    Criar
+                    <fa-icon [icon]="faPlusCircle"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <ng-container *ngIf="!isBetSelected">
+        <div class="alert alert-warning text-center">
+            Nenhuma aposta foi selecionada
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="isBetSelected">
+        <div class="card form-register shadow border-secondary animate__animated animate__zoomIn">
+            <div class="card-header">
+                <h3>Configuração de Apostas</h3>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="aposta-tab" data-bs-toggle="tab"
+                                data-bs-target="#aposta" type="button" role="tab" aria-controls="aposta"
+                                aria-selected="true">Aposta</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-tab" data-bs-toggle="tab"
+                                data-bs-target="#score" type="button" role="tab" aria-controls="score"
+                                aria-selected="false">Score - Básico</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-tab" data-bs-toggle="tab"
+                                data-bs-target="#score-events" type="button" role="tab" aria-controls="score-events"
+                                aria-selected="false">Score - Eventos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-stats-tab" data-bs-toggle="tab"
+                                data-bs-target="#score-stas" type="button" role="tab" aria-controls="score-stas"
+                                aria-selected="false">Score - Estatisticas</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="aposta" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="container mt-4">
+                                <form #f="ngForm">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="text" [value]="betSelected!.name"
+                                                    (input)="betSelected!.name" name="nameBet"
+                                                    class="form-control border-secondary" id="inputNameBet"
+                                                    placeholder="Nome da Aposta">
+                                                <label for="inputNameBet" class="form-label">Nome da Aposta</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="number" [value]="betSelected!.scoreMinimumEntry"
+                                                    (input)="betSelected!.scoreMinimumEntry" name="scoreMinimumEntry"
+                                                    class="form-control border-secondary" id="inputScoreAlmostEntry"
+                                                    placeholder="Valor Score (Perto do Padrão de Entrada)">
+                                                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
+                                                    (Perto
+                                                    do Padrão de
+                                                    Entrada)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="number" [value]="betSelected!.scoreEntry"
+                                                    (input)="betSelected!.scoreEntry" name="scoreEntry"
+                                                    class="form-control border-secondary" id="inputScoreAlmostEntry"
+                                                    placeholder="Valor Score (Padrão de Entrada)">
+                                                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
+                                                    (Padrão
+                                                    de
+                                                    Entrada)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-floating">
+                                                <select class="form-select shadow border-secondary" name="periodMatch"
+                                                    aria-label="Default select example" id="selectPeriod">
+                                                    <option selected [value]="betSelected!.periodMatch">
+                                                        {{betSelected!.periodMatch}}</option>
+                                                    <option value="1" (value)="betSelected!.periodMatch">1T</option>
+                                                    <option value="2" (value)="betSelected!.periodMatch">2T</option>
+                                                </select>
+                                                <label for="selectPeriod">Período do Jogo</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="text" [value]="betSelected!.minimumDashMinute"
+                                                    (input)="betSelected!.minimumDashMinute" name="minimumDashMinute"
+                                                    class="form-control border-secondary" id="inputMinimumTimeAnalysis"
+                                                    placeholder="Tempo Mínimo de Análise da Aposta (Min)">
+                                                <label for="inputMinimumTimeAnalysis" class="form-label">Tempo Mínimo de
+                                                    Análise da Aposta
+                                                    (Min)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="text" class="form-control border-secondary"
+                                                    [value]="betSelected!.maximumDashMinute"
+                                                    (input)="betSelected!.maximumDashMinute" name="maximumDashMinute"
+                                                    id="inputMaximumTimeAnalysis"
+                                                    placeholder="Tempo Máximo de Análise da Aposta (Min)">
+                                                <label for="inputMaximumTimeAnalysis" class="form-label">Tempo Máximo de
+                                                    Análise da Aposta
+                                                    (Min)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="text" class="form-control border-secondary"
+                                                    [value]="betSelected!.minimumOdd" (input)="betSelected!.minimumOdd"
+                                                    name="minimumOdd" id="inputminimumOdd"
+                                                    placeholder="Valor mínimo da Odd para realizar entrada">
+                                                <label for="inputminimumOdd" class="form-label">Valor mínimo da Odd para
+                                                    realizar entrada</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-floating mb-3 shadow">
+                                                <input type="text" class="form-control border-secondary"
+                                                    [value]="betSelected!.unit" (input)="betSelected!.unit" name="unit"
+                                                    id="unit" placeholder="Valor da unidade de entrada da aposta (U)">
+                                                <label for="inputminimumOdd" class="form-label">Valor da unidade de
+                                                    entrada da aposta (U)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="form-floating mb-3 shadow">
+                                                <textarea class="form-control border-secondary"
+                                                    [value]="betSelected!.templateMessageTelegram"
+                                                    (input)="betSelected!.templateMessageTelegram"
+                                                    name="templateMessageTelegram" placeholder="Leave a comment here"
+                                                    id="floatingTextarea"></textarea>
+                                                <label for="floatingTextarea">Template de Mensagem Telegram</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox"
+                                                    [value]="betSelected!.automaticSendTelegram"
+                                                    (input)="betSelected!.automaticSendTelegram"
+                                                    name="automaticSendTelegram" id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Envio automático de mensagem pelo Telegram
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score-events" role="tabpanel" aria-labelledby="score-events-tab">
+                            <div class="container mt-4">
+                                <div class="container">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">
+                            <div class="container mt-4">
+                                <div class="container">
+                                    <app-register-score-basic-view [model]="betSelected!" (model)="betSelected!">
+                                    </app-register-score-basic-view>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score-stas" role="tabpanel" aria-labelledby="score-stas-tab">
+                            <div class="container mt-4">
+                                <div class="container">
+                                    <app-register-score-stats-view [model]="betSelected!" (model)="betSelected!">
+                                    </app-register-score-stats-view>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-2">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-card">
+                                    Salvar
+                                    <fa-icon [icon]="faEye"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+
+</div>

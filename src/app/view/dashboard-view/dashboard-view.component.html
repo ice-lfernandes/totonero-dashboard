@@ -133,13 +133,16 @@
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-6">
-                                <a href="{{game.urlBet365}}" class="btn me-1" target="_blank">
-                                    <img src="assets/images/bet365-logo.png" alt="link Bet 365">
+                            <div class="col-6 mt-2">
+                                <a href="{{game.urlBet365}}"
+                                    class="btn btn-success btn-sm {{verifyLinkBetDisabled(game.urlBet365)}}"
+                                    target="_blank" dis>
+                                    Bet365
                                 </a>
                             </div>
                             <div class="col-6 mt-2">
-                                <fa-icon [icon]="faTelegram" size="2x" [styles]="{'color': '#0088cc'}" title="Enviar Notificação Telegram"></fa-icon>
+                                <fa-icon [icon]="faTelegram" size="2x" [styles]="{'color': '#0088cc'}"
+                                    title="Enviar Notificação Telegram"></fa-icon>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
@@ -17,12 +18,13 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardViewComponent } from './view/dashboard-view/dashboard-view.component';
 import { TableGamesComponent } from './view/menu/table-games/table-games.component';
 import { MenuComponent } from './view/menu/menu.component';
-import { RegisterBetsViewComponent } from './view/register-bets-view/register-bets-view.component';
-import { RegisterScoreViewComponent } from './view/register-score-view/register-score-view.component';
+import { RegisterBetsViewComponent } from './view/manager-bet-view/register-bets-view/register-bets-view.component';
+import { RegisterScoreStatsViewComponent } from './view/manager-bet-view/register-score-stats-view/register-score-stats-view.component';
 import { RegisterTeamScoreViewComponent } from './view/register-team-score-view/register-team-score-view.component';
 import { RegisterLeagueScoreViewComponent } from './view/register-league-score-view/register-league-score-view.component';
 import { RegisterBlackListViewComponent } from './view/register-black-list-view/register-black-list-view.component';
-import { MyBetsViewComponent } from './view/my-bets-view/my-bets-view.component';
+import { MyBetsViewComponent } from './view/manager-bet-view/my-bets-view/my-bets-view.component';
+import { RegisterScoreBasicViewComponent } from './view/manager-bet-view/register-score-basic-view/register-score-basic-view.component';
 
 @NgModule({
   declarations: [
@@ -33,16 +35,18 @@ import { MyBetsViewComponent } from './view/my-bets-view/my-bets-view.component'
     TableGamesComponent,
     MenuComponent,
     RegisterBetsViewComponent,
-    RegisterScoreViewComponent,
+    RegisterScoreStatsViewComponent,
     RegisterTeamScoreViewComponent,
     RegisterLeagueScoreViewComponent,
     RegisterBlackListViewComponent,
-    MyBetsViewComponent
+    MyBetsViewComponent,
+    RegisterScoreBasicViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgSelectModule,
     NgbModule,
     ApolloModule,
     HttpClientModule,

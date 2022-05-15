@@ -23,16 +23,21 @@ img {
     border-color: #2E7D32 !important;
 }
 
+.card-game-hot .split-div {
+    border-color: white;
+}
+
+
+.card-game-wormming .split-div {
+    border-color: black;
+}
+
 .center {
     margin: auto;
 }
 
 .spinner-loading {
     width: 3em;
-    height: 3em;
-}
-
-.card-footer .btn {
     height: 3em;
 }
 

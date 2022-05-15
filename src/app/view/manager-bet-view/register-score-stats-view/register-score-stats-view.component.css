@@ -17,3 +17,15 @@ form a {
     color: #212529;
 }
 
+table a {
+    color: #F44336;
+}
+
+table a:hover {
+    color: #F44336;
+}
+
+.btn-card {
+    background-color: #4CAF50;
+    color: white
+}
