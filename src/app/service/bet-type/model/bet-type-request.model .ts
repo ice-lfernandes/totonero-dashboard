@@ -1,6 +1,6 @@
 import { Rule } from "../../rule/model/rule.model";
 
-export interface BetType {
+export class BetTypeRequest {
     id: string;
     name: string;
     scoreMinimumEntry: number;
@@ -14,5 +14,7 @@ export interface BetType {
     minimumOdd: number;
     unit: number;
     rules: Rule[]
+
+    constructor() {}
 
 }
