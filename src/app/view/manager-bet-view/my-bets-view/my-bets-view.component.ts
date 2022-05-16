@@ -1,5 +1,5 @@
 import { Component, ComponentRef, Input, OnInit, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
-import { faEye, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEraser, faEye, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { BetTypeService } from 'src/app/service/bet-type/bet-type.service';
 import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
 import { RuleService } from 'src/app/service/rule/rule.service';
@@ -13,6 +13,7 @@ export class MyBetsViewComponent implements OnInit {
 
   faPlusCircle = faPlusCircle
   faEye = faEye
+  faEraser = faEraser
 
   bets: Array<BetType> = []
   betIdSelected!: string 
@@ -31,15 +32,14 @@ export class MyBetsViewComponent implements OnInit {
 
   visualizeBetType() {
     this.betSelected = this.bets.find(b => b.id == this.betIdSelected)
-    // this.loadingRulesBet(this.betSelected!)
     this.isBetSelected = true
   }
 
-  // private async loadingRulesBet(bet: BetType) {
-  //   const rules = await this.ruleService.getRulesBet(bet.id)
-  //   console.log(rules)
-  //   bet.maximumAdvantageInResult = 5
-  // }
+  cleanBetType() {
+    this.betSelected = undefined
+    this.isBetSelected = false
+    this.betIdSelected = '0'
+  }
 
 }
 
