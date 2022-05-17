@@ -25,7 +25,7 @@
                     Limpar
                     <fa-icon [icon]="faEraser"></fa-icon>
                 </button>
-                <button type="button" class="btn btn-dark me-3">
+                <button type="button" class="btn btn-dark me-3" (click)="createBetType()">
                     Cadastrar
                     <fa-icon [icon]="faPlusCircle"></fa-icon>
                 </button>
@@ -35,7 +35,7 @@
 
     <br>
 
-    <ng-container *ngIf="!isBetSelected">
+    <ng-container *ngIf="!isBetSelected && !isNewBetRequest">
         <div class="alert alert-warning text-center">
             Nenhuma aposta foi selecionada
         </div>
@@ -44,7 +44,7 @@
     <ng-container *ngIf="isBetSelected">
         <div class="card form-register shadow border-secondary animate__animated animate__zoomIn">
             <div class="card-header">
-                <h3>Configuração de Apostas</h3>
+                <h3>Configuração de Aposta</h3>
             </div>
             <div class="card-body">
                 <div class="container">
@@ -96,6 +96,76 @@
                                 <div class="container">
                                     <app-register-score-stats-view [model]="betSelected!" (model)="betSelected!">
                                     </app-register-score-stats-view>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-2">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-card">
+                                    Salvar
+                                    <fa-icon [icon]="faEye"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="isNewBetRequest">
+        <div class="card form-register shadow border-secondary animate__animated animate__zoomIn">
+            <div class="card-header">
+                <h3>Criação de Aposta</h3>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="aposta-tab" data-bs-toggle="tab"
+                                data-bs-target="#aposta" type="button" role="tab" aria-controls="aposta"
+                                aria-selected="true">Aposta</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-tab" data-bs-toggle="tab"
+                                data-bs-target="#score" type="button" role="tab" aria-controls="score"
+                                aria-selected="false">Score - Básico</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-tab" data-bs-toggle="tab"
+                                data-bs-target="#score-events" type="button" role="tab" aria-controls="score-events"
+                                aria-selected="false">Score - Eventos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link navs-tabs-card" id="score-stats-tab" data-bs-toggle="tab"
+                                data-bs-target="#score-stas" type="button" role="tab" aria-controls="score-stas"
+                                aria-selected="false">Score - Estatisticas</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="aposta" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="container mt-4">
+                                <app-register-bets-view (requestBetType)="betTypeRequest" [requestBetType]="betTypeRequest">
+                                </app-register-bets-view>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score-events" role="tabpanel" aria-labelledby="score-events-tab">
+                            <div class="container mt-4">
+                                <div class="container">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score" role="tabpanel" aria-labelledby="score-tab">
+                            <div class="container mt-4">
+                                <div class="container">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="score-stas" role="tabpanel" aria-labelledby="score-stas-tab">
+                            <div class="container mt-4">
+                                <div class="container">
                                 </div>
                             </div>
                         </div>

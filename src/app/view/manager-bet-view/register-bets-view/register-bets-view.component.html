@@ -2,17 +2,21 @@
     <div class="row">
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="text" [value]="model!.name"
-                    (input)="model!.name" name="nameBet"
-                    class="form-control border-secondary" id="inputNameBet"
+                <input *ngIf="model != null" type="text" [value]="model!.name" (input)="model!.name" name="nameBet"
+                    class="form-control border-secondary" id="inputNameBet" placeholder="Nome da Aposta">
+                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.name"
+                    (input)="requestBetType.name" name="nameBet" class="form-control border-secondary" id="inputNameBet"
                     placeholder="Nome da Aposta">
                 <label for="inputNameBet" class="form-label">Nome da Aposta</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="number" [value]="model!.scoreMinimumEntry"
-                    (input)="model!.scoreMinimumEntry" name="scoreMinimumEntry"
+                <input *ngIf="model != null" type="number" [value]="model!.scoreMinimumEntry"
+                    (input)="model!.scoreMinimumEntry" name="scoreMinimumEntry" class="form-control border-secondary"
+                    id="inputScoreAlmostEntry" placeholder="Valor Score (Perto do Padrão de Entrada)">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreMinimumEntry"
+                    (input)="requestBetType.scoreMinimumEntry" name="scoreMinimumEntry"
                     class="form-control border-secondary" id="inputScoreAlmostEntry"
                     placeholder="Valor Score (Perto do Padrão de Entrada)">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
@@ -23,10 +27,12 @@
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="number" [value]="model!.scoreEntry"
-                    (input)="model!.scoreEntry" name="scoreEntry"
-                    class="form-control border-secondary" id="inputScoreAlmostEntry"
+                <input *ngIf="model != null" type="number" [value]="model!.scoreEntry" (input)="model!.scoreEntry"
+                    name="scoreEntry" class="form-control border-secondary" id="inputScoreAlmostEntry"
                     placeholder="Valor Score (Padrão de Entrada)">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreEntry"
+                    (input)="requestBetType.scoreEntry" name="scoreEntry" class="form-control border-secondary"
+                    id="inputScoreAlmostEntry" placeholder="Valor Score (Padrão de Entrada)">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
                     (Padrão
                     de
@@ -39,8 +45,10 @@
             <div class="form-floating">
                 <select class="form-select shadow border-secondary" name="periodMatch"
                     aria-label="Default select example" id="selectPeriod">
-                    <option selected [value]="model!.periodMatch">
+                    <option *ngIf="model != null" selected [value]="model!.periodMatch">
                         {{model!.periodMatch}}</option>
+                    <option *ngIf="requestBetType != null" selected [value]="requestBetType.periodMatch">
+                        {{requestBetType.periodMatch}}</option>
                     <option value="1" (value)="model!.periodMatch">1T</option>
                     <option value="2" (value)="model!.periodMatch">2T</option>
                 </select>
@@ -49,65 +57,76 @@
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="text" [value]="model!.minimumDashMinute"
-                    (input)="model!.minimumDashMinute" name="minimumDashMinute"
+                <input *ngIf="model != null" type="text" [value]="model!.minimumDashMinute"
+                    (input)="model!.minimumDashMinute" name="minimumDashMinute" class="form-control border-secondary"
+                    id="inputMinimumTimeAnalysis" placeholder="Tempo Mínimo de Análise da Aposta (Min)">
+                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.minimumDashMinute"
+                    (input)="requestBetType.minimumDashMinute" name="minimumDashMinute"
                     class="form-control border-secondary" id="inputMinimumTimeAnalysis"
                     placeholder="Tempo Mínimo de Análise da Aposta (Min)">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Tempo Mínimo de
                     Análise da Aposta
-                    (Min)</label>
+                </label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="text" class="form-control border-secondary"
-                    [value]="model!.maximumDashMinute"
-                    (input)="model!.maximumDashMinute" name="maximumDashMinute"
-                    id="inputMaximumTimeAnalysis"
+                <input *ngIf="model != null" type="text" class="form-control border-secondary"
+                    [value]="model!.maximumDashMinute" (input)="model!.maximumDashMinute" name="maximumDashMinute"
+                    id="inputMaximumTimeAnalysis" placeholder="Tempo Máximo de Análise da Aposta (Min)">
+                <input *ngIf="requestBetType != null" type="text" class="form-control border-secondary"
+                    [value]="requestBetType.maximumDashMinute" (input)="requestBetType.maximumDashMinute"
+                    name="maximumDashMinute" id="inputMaximumTimeAnalysis"
                     placeholder="Tempo Máximo de Análise da Aposta (Min)">
                 <label for="inputMaximumTimeAnalysis" class="form-label">Tempo Máximo de
                     Análise da Aposta
-                    (Min)</label>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="text" class="form-control border-secondary"
-                    [value]="model!.minimumOdd" (input)="model!.minimumOdd"
-                    name="minimumOdd" id="inputminimumOdd"
+                <input *ngIf="model != null" type="text" class="form-control border-secondary"
+                    [value]="model!.minimumOdd" (input)="model!.minimumOdd" name="minimumOdd" id="inputminimumOdd"
                     placeholder="Valor mínimo da Odd para realizar entrada">
-                <label for="inputminimumOdd" class="form-label">Valor mínimo da Odd para
-                    realizar entrada</label>
+                <input *ngIf="requestBetType != null" type="text" class="form-control border-secondary"
+                    [value]="requestBetType.minimumOdd" (input)="requestBetType.minimumOdd" name="minimumOdd"
+                    id="inputminimumOdd" placeholder="Valor mínimo da Odd para realizar entrada">
+                <label for="inputminimumOdd" class="form-label">Valor mínimo da Odd da entrada</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="text" class="form-control border-secondary"
-                    [value]="model!.unit" (input)="model!.unit" name="unit"
-                    id="unit" placeholder="Valor da unidade de entrada da aposta (U)">
+                <input *ngIf="model != null" type="text" class="form-control border-secondary" [value]="model!.unit"
+                    (input)="model!.unit" name="unit" id="unit" placeholder="Valor da unidade de entrada da aposta (U)">
+                <input *ngIf="requestBetType != null" type="text" class="form-control border-secondary"
+                    [value]="requestBetType.unit" (input)="requestBetType.unit" name="unit" id="unit"
+                    placeholder="Valor da unidade de entrada da aposta (U)">
                 <label for="inputminimumOdd" class="form-label">Valor da unidade de
-                    entrada da aposta (U)</label>
+                    entrada</label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-8">
             <div class="form-floating mb-3 shadow">
-                <textarea class="form-control border-secondary"
-                    [value]="model!.templateMessageTelegram"
-                    (input)="model!.templateMessageTelegram"
-                    name="templateMessageTelegram" placeholder="Leave a comment here"
-                    id="floatingTextarea"></textarea>
+                <textarea *ngIf="model != null" class="form-control border-secondary"
+                    [value]="model!.templateMessageTelegram" (input)="model!.templateMessageTelegram"
+                    name="templateMessageTelegram" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <textarea *ngIf="requestBetType != null" class="form-control border-secondary"
+                    [value]="requestBetType.templateMessageTelegram" (input)="model!.templateMessageTelegram"
+                    name="templateMessageTelegram" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                 <label for="floatingTextarea">Template de Mensagem Telegram</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox"
-                    [value]="model!.automaticSendTelegram"
-                    (input)="model!.automaticSendTelegram"
+                <input *ngIf="model != null" class="form-check-input" type="checkbox"
+                    [value]="model!.automaticSendTelegram" (input)="model!.automaticSendTelegram"
+                    name="automaticSendTelegram" id="flexCheckDefault">
+                <input *ngIf="requestBetType != null" class="form-check-input" type="checkbox"
+                    [value]="requestBetType.automaticSendTelegram" (input)="requestBetType.automaticSendTelegram"
                     name="automaticSendTelegram" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                     Envio automático de mensagem pelo Telegram

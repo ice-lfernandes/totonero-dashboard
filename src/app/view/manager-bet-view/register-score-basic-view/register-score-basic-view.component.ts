@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
 import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
 import { Rule } from 'src/app/service/rule/model/rule.model';
 
@@ -15,6 +16,7 @@ export class RegisterScoreBasicViewComponent implements OnInit, OnChanges {
   readonly FAVORITE_TEAM_WINNING_RULE = 'FAVORITE_TEAM_WINNING_RULE'
 
   @Input() model: BetType
+  @Input() requestBetType: BetTypeRequest
   rules: Rule[]
 
   strategies = [1, 2, 3]

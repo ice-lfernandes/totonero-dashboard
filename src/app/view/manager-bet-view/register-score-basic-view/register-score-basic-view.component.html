@@ -43,8 +43,8 @@
     <div class="row">
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input type="number" class="form-control border-secondary" id="inputScoreFavoriteLossing"
-                    [value]="getRuleByName(FAVORITE_TEAM_LOSING_RULE)?.score"
+                <input *ngIf="model != null" type="number" class="form-control border-secondary"
+                    id="inputScoreFavoriteLossing" [value]="getRuleByName(FAVORITE_TEAM_LOSING_RULE)?.score"
                     (input)="getRuleByName(FAVORITE_TEAM_LOSING_RULE)?.score" name="valueScoreFavoriteLossing"
                     id="inputminimumOdd" placeholder="Pontos quando favorito está perdendo">
                 <label for="inputScoreFavoriteLossing" class="form-label">Pontos quando favorito está

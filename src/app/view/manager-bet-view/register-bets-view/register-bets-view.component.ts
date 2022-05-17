@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
 import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
 
 @Component({
@@ -24,6 +25,7 @@ export class RegisterBetsViewComponent implements OnInit {
   infoInputScoreFavoriteTieing = `Define os pontos que serão somados ao score quando o favorito estiver empatando`
   
   @Input() model: BetType
+  @Input() requestBetType: BetTypeRequest
 
   constructor() { }
 
