@@ -1,0 +1,61 @@
+<a class="star-logo" (click)="open(contentTeamVipRegister, 'modal-team-vip-register')" title="Cadastro de Times Vip">
+    <fa-icon [icon]="faStar"></fa-icon>
+</a>
+<img [src]="urlLogo" [alt]="nameTeam">
+
+<ng-template #contentTeamVipRegister let-modal class="shadow">
+    <div class="modal-header header-modal-bg">
+        <h4 class="modal-title" id="modal-team-vip-register">Cadastro Time Vip</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body container">
+        <form>
+            <div class="row">
+                <div class="col-3">
+                    <div class="form-floating mb-3 shadow">
+                        <input type="text" [value]="team.name" name="nameTeam" class="form-control border-secondary"
+                            id="inputnameTeam" placeholder="Time" disabled>
+                        <label for="inputnameTeam" class="form-label">Time</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-floating mb-3 shadow">
+                        <input type="text" [value]="leagueName" name="leagueName" class="form-control border-secondary"
+                            id="inputLeagueName" placeholder="Liga" disabled>
+                        <label for="inputLeagueName" class="form-label">Liga</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-floating shadow">
+                        <select class="form-select" id="floatingSelect">
+                            <option selected disabled>Definição do score</option>
+                            <option value="1">Soma</option>
+                            <option value="2">Subtração</option>
+                        </select>
+                        <label for="floatingSelect">Definição do score</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-floating mb-3 shadow">
+                        <input type="number" class="form-control" id="inputValor" placeholder="Score">
+                        <label for="inputValor" class="form-label">Score</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container mt-2">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-card">
+                                Salvar
+                                <fa-icon [icon]="faSave"></fa-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</ng-template>

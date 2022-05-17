@@ -25,6 +25,7 @@ import { RegisterLeagueScoreViewComponent } from './view/register-league-score-v
 import { RegisterBlackListViewComponent } from './view/register-black-list-view/register-black-list-view.component';
 import { MyBetsViewComponent } from './view/manager-bet-view/my-bets-view/my-bets-view.component';
 import { RegisterScoreBasicViewComponent } from './view/manager-bet-view/register-score-basic-view/register-score-basic-view.component';
+import { LogoTeamComponent } from './shared/components/logo-team/logo-team.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RegisterScoreBasicViewComponent } from './view/manager-bet-view/registe
     RegisterLeagueScoreViewComponent,
     RegisterBlackListViewComponent,
     MyBetsViewComponent,
-    RegisterScoreBasicViewComponent
+    RegisterScoreBasicViewComponent,
+    LogoTeamComponent
   ],
   imports: [
     BrowserModule,

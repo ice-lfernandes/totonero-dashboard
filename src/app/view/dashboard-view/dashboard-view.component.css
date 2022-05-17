@@ -6,12 +6,6 @@
     font-size: 0.7em;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
-
 .card-game-wormming {
     background-color: #A5D6A7;
     border-color: #4CAF50 !important;
