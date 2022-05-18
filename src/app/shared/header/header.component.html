@@ -35,7 +35,10 @@
         <fa-icon [icon]="faCircleUser" size="2x" class="user-icon me-2"></fa-icon>
         <span class="user-icon me-2">Totonero</span>
         <span class="user-icon me-2">|</span>
-        <a class="user-icon" (click)="logout()">Logout</a>
+        <button type="button" class="btn btn-sm btn-card" (click)="logout()">
+            Logout
+            <fa-icon [icon]="faArrowUpFromBracket"></fa-icon>
+        </button>
     </div>
   </div>
 </div>

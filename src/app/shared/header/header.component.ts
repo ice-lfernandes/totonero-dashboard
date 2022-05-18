@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpFromBracket, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
@@ -12,6 +11,7 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
 export class HeaderComponent implements OnInit {
 
   faCircleUser = faCircleUser
+  faArrowUpFromBracket = faArrowUpFromBracket
 
   constructor(public loginService: AuthenticationService) { }
 

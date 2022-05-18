@@ -36,3 +36,9 @@
     color: #c2c2c2;
     text-decoration: none;
 }
+
+.btn-card {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border-color: #2E7D32 !important;
+}
