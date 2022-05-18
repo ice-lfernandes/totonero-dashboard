@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <form #f="ngForm"> 
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div class="form-floating mb-3 shadow">
+                    <input type="text" name="username" [(ngModel)]="username"
+                    class="form-control border-secondary" id="inputUsername"
+                        placeholder="Usuário">
+                    <label for="inputUsername" class="form-label">Usuário</label>
+                </div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div class="form-floating mb-3 shadow">
+                    <input type="password" name="password" class="form-control border-secondary" id="inputPassword"
+                        placeholder="Senha" [(ngModel)]="password">
+                    <label for="inputPassword" class="form-label">Senha</label>
+                </div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-card" (click)="checkLogin()">
+                    Login
+                    <fa-icon [icon]="faRightFromBracket"></fa-icon>
+                </button>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </form>
+</div>

@@ -12,16 +12,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link active" aria-current="page" routerLink="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/minhas-bets">Mercado de Apostas</a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/minhas-bets">Minhas Apostas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/cadastro-liga-score">Cadastro Score Ligas</a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/cadastro-time-score">Times Vip</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/cadastro-score">Black List</a>
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/cadastro-liga-score">Liga Vip</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/cadastro-score">Black List</a>
               </li>
             </ul>
           </div>

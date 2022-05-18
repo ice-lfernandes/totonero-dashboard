@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
 faCircleUser = faCircleUser
 
-constructor() { }
+constructor(public loginService:AuthenticationService) { }
 
 ngOnInit(): void {
 }

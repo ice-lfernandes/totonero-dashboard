@@ -1,5 +1,5 @@
 import { Component, ComponentRef, Input, OnInit, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
-import { faEraser, faEye, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEraser, faEye, faPlusCircle, faSave } from '@fortawesome/free-solid-svg-icons';
 import { BetTypeService } from 'src/app/service/bet-type/bet-type.service';
 import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
 import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
@@ -15,6 +15,7 @@ export class MyBetsViewComponent implements OnInit {
   faPlusCircle = faPlusCircle
   faEye = faEye
   faEraser = faEraser
+  faSave = faSave
 
   bets: Array<BetType> = []
   betIdSelected!: string

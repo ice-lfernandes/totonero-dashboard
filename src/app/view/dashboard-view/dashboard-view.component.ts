@@ -3,7 +3,7 @@ import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { DashboardBffService } from 'src/app/service/dashboard/dashboard-bff.service';
 import { Match } from '../../service/alert/model/match.model';
 
-const intervalSeconds = 30000
+const intervalSeconds = 45000
 
 @Component({
   selector: 'app-dashboard-view',
@@ -23,9 +23,9 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateMatches()
-    // this.interval = setInterval(() => {
-    //   this.updateMatches();
-    // }, intervalSeconds);
+    this.interval = setInterval(() => {
+      this.updateMatches();
+    }, intervalSeconds);
   }
 
   async updateMatches() {
