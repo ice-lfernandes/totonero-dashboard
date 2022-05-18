@@ -31,10 +31,11 @@
         </div>
       </nav>
     </div>
-    <div class="col-1 mt-4">
-      <a href="">
-        <fa-icon [icon]="faCircleUser" size="2x" style="color: #c2c2c2"></fa-icon>
-      </a>
+    <div class="col-2 mt-4">
+        <fa-icon [icon]="faCircleUser" size="2x" class="user-icon me-2"></fa-icon>
+        <span class="user-icon me-2">Totonero</span>
+        <span class="user-icon me-2">|</span>
+        <a class="user-icon" (click)="logout()">Logout</a>
     </div>
   </div>
 </div>

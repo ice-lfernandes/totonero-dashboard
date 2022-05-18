@@ -8,7 +8,7 @@ import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 })
 export class ButtonCardComponent implements OnInit {
 
-  // @Input() function: (args: any) => void
+  @Input() function: Function
   @Input() action: string
   @Input() icon: IconDefinition
 

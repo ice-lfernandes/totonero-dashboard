@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   authenticate(username: string, password: string) {
     if (username === "totonero" && password === "totonero") {
@@ -14,6 +15,11 @@ export class AuthenticationService {
     } else {
       return false;
     }
+  }
+
+  logout() {
+    sessionStorage.clear()
+    this.router.navigate(['login'])
   }
 
   isUserLoggedIn() {

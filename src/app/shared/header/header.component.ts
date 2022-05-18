@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
@@ -10,11 +11,16 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
 })
 export class HeaderComponent implements OnInit {
 
-faCircleUser = faCircleUser
+  faCircleUser = faCircleUser
 
-constructor(public loginService:AuthenticationService) { }
+  constructor(public loginService: AuthenticationService) { }
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+    
+  }
+
+  logout() {
+    this.loginService.logout()
+  }
 
 }
