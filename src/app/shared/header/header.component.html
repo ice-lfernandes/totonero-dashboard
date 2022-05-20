@@ -33,12 +33,14 @@
     </div>
     <div class="col-3 mt-4">
         <fa-icon [icon]="faCircleUser" size="2x" class="user-icon me-2"></fa-icon>
-        <span class="user-icon me-2">Totonero</span>
-        <span class="user-icon me-2">|</span>
-        <button type="button" class="btn btn-sm btn-card" (click)="logout()">
-            Logout
-            <fa-icon [icon]="faArrowUpFromBracket"></fa-icon>
-        </button>
+        <ng-container *ngIf="loginService.isUserLoggedIn()">
+          <span class="user-icon me-2">{{loginService.user?.username}}</span>
+          <span class="user-icon me-2">|</span>
+          <button type="button" class="btn btn-sm btn-card" (click)="logout()">
+              Logout
+              <fa-icon [icon]="faArrowUpFromBracket"></fa-icon>
+          </button>
+        </ng-container>
     </div>
   </div>
 </div>

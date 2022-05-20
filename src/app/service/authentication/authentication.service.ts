@@ -14,15 +14,16 @@ export class AuthenticationService {
   constructor(private router: Router, private authenticationClient: AuthenticationClientService) { }
 
   async authenticate(username: string, password: string) {
-    console.log(username + " e " + password)
+    try {
+      this.user = await this.authenticationClient.authenticate(username, password)
 
-    this.user = await this.authenticationClient.authenticate(username, password)
-    console.log(this.user)
+      if (this.user === null) return false
 
-    if (this.user === null) return false
-
-    sessionStorage.setItem('token', this.user!.token)
-    return true;
+      sessionStorage.setItem('token', this.user!.token)
+      return true;
+    } catch (error) {
+      return false
+    }
   }
 
   logout() {

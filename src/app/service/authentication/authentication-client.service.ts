@@ -1,6 +1,5 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
 import { LoginRequestDTO } from './model/login-request-dto.model';
 import { User } from './model/user.model';
 
