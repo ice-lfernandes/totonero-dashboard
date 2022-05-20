@@ -1,29 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthenticationClientService } from './authentication-client.service';
+import { User } from './model/user.model';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private router: Router) { }
+  user: User | undefined
 
-  authenticate(username: string, password: string) {
-    if (username === "totonero" && password === "totonero") {
-      sessionStorage.setItem('username', username)
-      return true;
-    } else {
-      return false;
-    }
+  constructor(private router: Router, private authenticationClient: AuthenticationClientService) { }
+
+  async authenticate(username: string, password: string) {
+    console.log(username + " e " + password)
+
+    this.user = await this.authenticationClient.authenticate(username, password)
+    console.log(this.user)
+
+    if (this.user === null) return false
+
+    sessionStorage.setItem('token', this.user!.token)
+    return true;
   }
 
   logout() {
     sessionStorage.clear()
+    this.user = undefined
     this.router.navigate(['login'])
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    return !(user === null)
+    let token = sessionStorage.getItem('token')
+    return !(token === null)
   }
 }

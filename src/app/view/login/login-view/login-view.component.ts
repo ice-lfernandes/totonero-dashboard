@@ -22,8 +22,8 @@ export class LoginViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)) {
+  async checkLogin() {
+    if (await this.loginservice.authenticate(this.username, this.password)) {
       this.invalidLogin = false
       this.router.navigate([''])
     } else
