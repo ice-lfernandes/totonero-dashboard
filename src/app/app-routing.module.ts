@@ -6,7 +6,7 @@ import { MyBetsViewComponent } from './view/manager-bet-view/my-bets-view/my-bet
 import { RegisterLeagueScoreViewComponent } from './view/register-league-score-view/register-league-score-view.component';
 import { RegisterTeamScoreViewComponent } from './view/register-team-score-view/register-team-score-view.component';
 import { LoginViewComponent } from './view/login/login-view/login-view.component';
-import { AuthGaurdService } from './service/auth/auth-gaurd.service';
+import { AuthGaurdService } from './service/authentication/auth/auth-gaurd.service';
 
 const routes: Routes = [
   { path: '', component: DashboardViewComponent, canActivate: [AuthGaurdService] },

@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { faTableList } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertService } from 'src/app/service/alert/alert-service.service';
-import { MatchAlive } from 'src/app/service/alert/match-alive.model';
+
+import { AlertService } from 'src/app/service/integration/alert/alert-service.service';
+import { MatchAlive } from 'src/app/service/integration/alert/match-alive.model';
 
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, ComponentRef, Input, OnInit, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
 import { faEraser, faEye, faPlusCircle, faSave } from '@fortawesome/free-solid-svg-icons';
-import { BetTypeService } from 'src/app/service/bet-type/bet-type.service';
-import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
-import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
-import { RuleService } from 'src/app/service/rule/rule.service';
+import { BetTypeService } from 'src/app/service/integration/bet-type/bet-type.service';
+import { BetTypeRequest } from 'src/app/service/integration/bet-type/model/bet-type-request.model ';
+import { BetType } from 'src/app/service/integration/bet-type/model/bet-type.model';
+import { RuleService } from 'src/app/service/integration/rule/rule.service';
 
 @Component({
   selector: 'app-my-bets-view',

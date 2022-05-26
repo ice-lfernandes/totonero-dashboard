@@ -64,7 +64,7 @@ import { ButtonCardComponent } from './shared/components/button-card/button-card
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://totonero-dashbord-service.us-east-1.elasticbeanstalk.com/graphql',
+          uri: 'http://localhost:8090/graphql',
         }),
       };
     },

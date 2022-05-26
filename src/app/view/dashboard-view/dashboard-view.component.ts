@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { DashboardBffService } from 'src/app/service/dashboard/dashboard-bff.service';
-import { Match } from '../../service/alert/model/match.model';
+import { DashboardBffService } from 'src/app/service/integration/dashboard/dashboard-bff.service';
+import { Match } from '../../service/integration/alert/model/match.model';
 
 const intervalSeconds = 45000
 
@@ -19,7 +19,7 @@ export class DashboardViewComponent implements OnInit {
   isCollapsed = true;
   faTelegram = faTelegram
 
-  constructor(private service: DashboardBffService) { }
+  constructor(private service: DashboardBffService) {}
 
   ngOnInit(): void {
     this.updateMatches()

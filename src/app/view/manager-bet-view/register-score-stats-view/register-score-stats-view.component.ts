@@ -1,9 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { faCircleInfo, faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
-import { Rule } from 'src/app/service/rule/model/rule.model';
-import { StatSelected } from './model/stat-selected.model';
+import { BetType } from 'src/app/service/integration/bet-type/model/bet-type.model';
+import { Rule } from 'src/app/service/integration/rule/model/rule.model';
 import { Stat } from './model/stat.model';
 
 

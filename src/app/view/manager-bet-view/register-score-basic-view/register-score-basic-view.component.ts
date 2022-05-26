@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
-import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
-import { Rule } from 'src/app/service/rule/model/rule.model';
+import { BetTypeRequest } from 'src/app/service/integration/bet-type/model/bet-type-request.model ';
+import { BetType } from 'src/app/service/integration/bet-type/model/bet-type.model';
+import { Rule } from 'src/app/service/integration/rule/model/rule.model';
 
 @Component({
   selector: 'app-register-score-basic-view',

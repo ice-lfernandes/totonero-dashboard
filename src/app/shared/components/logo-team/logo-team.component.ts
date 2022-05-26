@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faCircleInfo, faSave, faStar } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Team } from 'src/app/service/alert/model/team.model';
+import { Team } from 'src/app/service/integration/alert/model/team.model';
 
 @Component({
   selector: 'app-logo-team',

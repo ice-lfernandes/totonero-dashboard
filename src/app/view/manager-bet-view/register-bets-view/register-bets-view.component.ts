@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import { BetTypeRequest } from 'src/app/service/bet-type/model/bet-type-request.model ';
-import { BetType } from 'src/app/service/bet-type/model/bet-type.model';
+import { BetTypeRequest } from 'src/app/service/integration/bet-type/model/bet-type-request.model ';
+import { BetType } from 'src/app/service/integration/bet-type/model/bet-type.model';
 
 @Component({
   selector: 'app-register-bets-view',
