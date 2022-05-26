@@ -8,7 +8,7 @@ import { User } from './model/user.model';
 })
 export class AuthenticationClientService {
 
-  url = 'http://localhost:8080/auth'
+  url = 'http://totonero-service.us-east-1.elasticbeanstalk.com/auth'
   errorMsg: string
 
   // Headers

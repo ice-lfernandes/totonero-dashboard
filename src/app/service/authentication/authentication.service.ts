@@ -20,6 +20,7 @@ export class AuthenticationService {
       if (this.user === null) return false
 
       sessionStorage.setItem('token', this.user!.token)
+      console.log(this.user)
       sessionStorage.setItem('username', this.user!.username)
       return true;
     } catch (error) {
