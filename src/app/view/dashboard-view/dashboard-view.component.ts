@@ -19,7 +19,7 @@ export class DashboardViewComponent implements OnInit {
   isCollapsed = true;
   faTelegram = faTelegram
 
-  constructor(private service: DashboardBffService) {}
+  constructor(private service: DashboardBffService) { }
 
   ngOnInit(): void {
     this.updateMatches()
@@ -45,18 +45,18 @@ export class DashboardViewComponent implements OnInit {
     this.loading = false
   }
 
-  changeCardByScore(score: number): string {
-    if (score < 850) {
+  changeCardByScore(match: Match): string {
+    if (match.score < match.goodScore) {
       return ''
-    } else if (score < 1000) {
+    } else if (match.score < match.greatScore) {
       return 'card-game-wormming'
     } else {
       return 'card-game-hot'
     }
   }
 
-  changeBadgeByScore(score: number): string {
-    if (score >= 1000) {
+  changeBadgeByScore(match: Match): string {
+    if (match.score >= match.greatScore) {
       return 'bg-success'
     } else {
       return 'bg-secondary'

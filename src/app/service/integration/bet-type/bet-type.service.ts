@@ -8,12 +8,12 @@ import { BetType } from './model/bet-type.model';
 })
 export class BetTypeService {
 
-  private betsQuery: QueryRef<{ bets: BetType[] }>
+  private betsQuery: QueryRef<{ bets: BetType[] }, { token: string; }>
 
   constructor(private apollo: Apollo) {
     this.betsQuery = this.apollo.watchQuery({
-      query: gql`query {
-            bets {
+      query: gql`query($token: String!) {
+            bets(token: $token) {
               id
               name
               scoreEntry
@@ -32,13 +32,16 @@ export class BetTypeService {
                 name
                 value
                 score
-                isEqual
-                isMandatory
-                isUnderdogTeam
-                isMandatoryAfterRedCard
+                mandatory
+                mandatoryAfterRedCard
+                comparator
+                teamType
               }
             }
-          }`
+          }`,
+          variables: {
+            token: sessionStorage.getItem('token')!
+          }
     });
   }
 

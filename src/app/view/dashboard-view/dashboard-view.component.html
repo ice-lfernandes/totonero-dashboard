@@ -13,37 +13,37 @@
 
     <div class="row">
         <ng-container *ngIf="!noGamesAvaiable">
-            <div class="col-sm-3 animate__animated animate__zoomIn" *ngFor="let game of matchs">
+            <div class="col-sm-3 animate__animated animate__zoomIn" *ngFor="let match of matchs">
                 <div
-                    class="card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary {{changeCardByScore(game.score)}}">
-                    <span class="badge {{changeBadgeByScore(game.score)}} border-secondary">SCORE: {{game.score}} |
-                        APOSTA: {{game.betName}}</span>
+                    class="card text-center shadow p-3 mb-5 rounded card-presentation-game border-secondary {{changeCardByScore(match)}}">
+                    <span class="badge {{changeBadgeByScore(match)}} border-secondary">SCORE: {{match.score}} |
+                        APOSTA: {{match.betName}}</span>
                     <div class="card-header">
                         <div class="row text-start">
                             <div class="col col-12">
-                                <h6> {{game.leagueName}} </h6>
+                                <h6> {{match.leagueName}} </h6>
                             </div>
                         </div>
                         <div class="row mt-1">
                             <div class="col col-12">
-                                <h6>{{game.home.name}} - {{game.away.name}}</h6>
+                                <h6>{{match.home.name}} - {{match.away.name}}</h6>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col col-4">
                                 <div class="row">
-                                    <app-logo-team [urlLogo]="game.home.logo" [nameTeam]="game.home.name"
-                                        [team]="game.home" [leagueName]="game.leagueName"></app-logo-team>
+                                    <app-logo-team [urlLogo]="match.home.logo" [nameTeam]="match.home.name"
+                                        [team]="match.home" [leagueName]="match.leagueName"></app-logo-team>
                                 </div>
                             </div>
                             <div class="col col-4 center mt-2">
-                                <h4>{{game.home.score}} - {{game.away.score}}</h4>
-                                <h6>Minutos: {{game.minutesOfMatch}}</h6>
+                                <h4>{{match.home.score}} - {{match.away.score}}</h4>
+                                <h6>Minutos: {{match.minutesOfMatch}}</h6>
                             </div>
                             <div class="col col-4">
                                 <div class="row">
-                                    <app-logo-team [urlLogo]="game.away.logo" [nameTeam]="game.away.name"
-                                        [leagueName]="game.leagueName" [team]="game.away"></app-logo-team>
+                                    <app-logo-team [urlLogo]="match.away.logo" [nameTeam]="match.away.name"
+                                        [leagueName]="match.leagueName" [team]="match.away"></app-logo-team>
                                 </div>
                             </div>
                         </div>
@@ -51,93 +51,93 @@
                     <div class="card-body">
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.ballPossession}}%</h5>
+                                <h5>{{match.home.ballPossession}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Posse de Bola</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.ballPossession}}%</h5>
+                                <h5>{{match.away.ballPossession}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.attacks}}</h5>
+                                <h5>{{match.home.attacks}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Ataques</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.attacks}}</h5>
+                                <h5>{{match.away.attacks}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.dangerousAttack}}</h5>
+                                <h5>{{match.home.dangerousAttack}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Ataques Perigosos</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.dangerousAttack}}</h5>
+                                <h5>{{match.away.dangerousAttack}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.shotOnGoal}}</h5>
+                                <h5>{{match.home.shotOnGoal}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Chutes no Gol</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.shotOnGoal}}</h5>
+                                <h5>{{match.away.shotOnGoal}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.shotOffGoal}}</h5>
+                                <h5>{{match.home.shotOffGoal}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Chutes pra Fora</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.shotOffGoal}}</h5>
+                                <h5>{{match.away.shotOffGoal}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.cornerKick}}</h5>
+                                <h5>{{match.home.cornerKick}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Escanteios</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.cornerKick}}</h5>
+                                <h5>{{match.away.cornerKick}}</h5>
                             </div>
                             <div class="split-div"></div>
                         </div>
                         <div class="row mb-1">
                             <div class="col col-3">
-                                <h5>{{game.home.redCard}}</h5>
+                                <h5>{{match.home.redCard}}</h5>
                             </div>
                             <div class="col col-6">
                                 <h5>Cartões Vermelhos</h5>
                             </div>
                             <div class="col col-3">
-                                <h5>{{game.away.redCard}}</h5>
+                                <h5>{{match.away.redCard}}</h5>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-6 mt-2">
-                                <a href="{{game.urlBet365}}"
-                                    class="btn btn-success btn-sm {{verifyLinkBetDisabled(game.urlBet365)}}"
+                                <a href="{{match.urlBet365}}"
+                                    class="btn btn-success btn-sm {{verifyLinkBetDisabled(match.urlBet365)}}"
                                     target="_blank" dis>
                                     Bet365
                                 </a>

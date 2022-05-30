@@ -14,6 +14,9 @@ export class DashboardBffService {
       query: gql`query($token: String!) {
           matches(token: $token) {
             score
+            minimumScore
+            goodScore
+            greatScore
             matchId
             leagueName
             minutesOfMatch
