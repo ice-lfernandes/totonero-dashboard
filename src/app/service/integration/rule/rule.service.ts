@@ -1,5 +1,7 @@
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Apollo, gql, QueryRef } from 'apollo-angular';
+import { Observable } from 'rxjs';
+import { BetType } from '../bet-type/model/bet-type.model';
 import { Rule } from './model/rule.model';
 
 @Injectable({
@@ -7,36 +9,20 @@ import { Rule } from './model/rule.model';
 })
 export class RuleService {
 
-  private rulesQuery: QueryRef<{ rules: Rule[]; }, { betId: string; }>
+  url = 'http://localhost:8080/rule'
 
-  constructor(private apollo: Apollo) {
-
+  // Headers
+  httpOptions = {
+    headers: new HttpHeaders({ 
+      'Content-Type': 'application/json', 
+      'Authorization' : 'Bearer ' + sessionStorage.getItem('token')
+    })
   }
 
-  async getRulesBet(betId: string): Promise<Rule[]> {
-    this.createQueryRef(betId)
-    const result = await this.rulesQuery.refetch();
-    return result.data.rules;
+  constructor(private http: HttpClient) { }
+
+  getRuleAvailable(): Observable<Rule[]> {
+    return this.http.get<Rule[]>(this.url, this.httpOptions).pipe()
   }
 
-  private createQueryRef(betId: string) {
-    this.rulesQuery = this.apollo.watchQuery({
-      query: gql`query($betId: ID!) {
-            rules(betId: $betId) {
-              id
-              type
-              name
-              value
-              score
-              isEqual
-              isMandatory
-              isUnderdogTeam
-              isMandatoryAfterRedCard
-            }
-          }`,
-      variables: {
-        betId: betId
-      }
-    });
-  }
 }

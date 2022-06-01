@@ -1,131 +1,91 @@
-<form>
-    <div class="row">
-        <h5>Estatisticas de Score Disponíveis</h5>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating">
-                <select class="form-select shadow border-secondary" aria-label="Default select example"
-                    id="selectStats">
-                    <option selected disabled>Estatisticas</option>
-                    <option *ngFor="let stat of statsAvaiable" [value]="stat.value">{{stat.name}}
-                    </option>
-                </select>
-                <label for="selectStats">Estatisticas</label>
-            </div>
+<div class="row">
+    <h5>Estatisticas de Score Disponíveis</h5>
+</div>
+<div class="row">
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating">
+            <select class="form-select shadow border-secondary" aria-label="Default select example" id="selectStats"
+                [(ngModel)]="newBetRule.rule">
+                <option selected disabled>Estatisticas</option>
+                <option *ngFor="let rule of ruleAvailables" [ngValue]="rule">{{rule.name}}
+                </option>
+            </select>
+            <label for="selectStats">Estatisticas</label>
         </div>
+    </div>
 
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating">
-                <select class="form-select shadow border-secondary" aria-label="Default select example"
-                    id="selectStats">
-                    <option selected disabled>Time</option>
-                    <option value="1">Favorito</option>
-                    <option value="2">Zebra</option>
-                </select>
-                <label for="selectStats">Time</label>
-            </div>
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating">
+            <select class="form-select shadow border-secondary" aria-label="Default select example" id="selectStats"
+                [(ngModel)]="newBetRule.teamType">
+                <option selected disabled>Time</option>
+                <option *ngFor="let teamType of teamTypeAvailable" [value]="teamType">{{teamType}}</option>
+            </select>
+            <label for="selectStats">Time</label>
         </div>
+    </div>
 
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating">
-                <select class="form-select shadow border-secondary" aria-label="Default select example"
-                    id="inputMandatory">
-                    <option selected disabled>Obrigatório</option>
-                    <option value="1">Sim</option>
-                    <option value="2">Não</option>
-                </select>
-                <label for="inputMandatory">Obrigatório</label>
-            </div>
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating">
+            <select class="form-select shadow border-secondary" aria-label="Default select example" id="inputMandatory"
+                [(ngModel)]="newBetRule.mandatory">
+                <option selected disabled>Obrigatório</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+            </select>
+            <label for="inputMandatory">Obrigatório</label>
         </div>
     </div>
-    <div class="row">
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating mb-3 shadow">
-                <input type="number" class="form-control border-secondary" id="inputValor" placeholder="Valor">
-                <label for="inputValor" class="form-label">Valor</label>
-            </div>
-        </div>
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating">
-                <select class="form-select shadow border-secondary" aria-label="Default select example"
-                    id="inputComparable">
-                    <option selected disabled>Comparação</option>
-                    <option value="1">Maior</option>
-                    <option value="2">Maior ou Igual</option>
-                    <option value="3">Menor</option>
-                    <option value="4">Menor ou Igual</option>
-                    <option value="5">Igual</option>
-                </select>
-                <label for="inputComparable">Comparação</label>
-            </div>
-        </div>
-        <div class="col-4">
-            <a placement="top" ngbTooltip="{{infoSelectBetName}}">
-                <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
-            </a>
-            <div class="form-floating mb-3 shadow">
-                <input type="number" class="form-control border-secondary" id="inputScore" placeholder="Score">
-                <label for="inputScore" class="form-label">Score</label>
-            </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating mb-3 shadow">
+            <input type="number" class="form-control border-secondary" id="inputValor" placeholder="Valor"
+                [(ngModel)]="newBetRule.value">
+            <label for="inputValor" class="form-label">Valor</label>
         </div>
     </div>
-    <div class="row">
-        <div class="col-3">
-            <button type="button" class="btn btn-card" (click)="addRule()">
-                Adicionar Regra
-                <fa-icon [icon]="faPlusCircle"></fa-icon>
-            </button>
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating">
+            <select class="form-select shadow border-secondary" aria-label="Default select example"
+                id="inputComparable" [(ngModel)]="newBetRule.comparator">
+                <option selected disabled>Comparação</option>
+                <option *ngFor="let comparator of comparatorAvailable" [value]="comparator">{{comparator}}</option>
+            </select>
+            <label for="inputComparable">Comparação</label>
         </div>
     </div>
-    <br>
-    <div class="row">
-        <h5>Estatisticas de Score Cadastradas</h5>
+    <div class="col-4">
+        <a placement="top" ngbTooltip="{{infoSelectBetName}}">
+            <fa-icon [icon]="faCircleInfo" size="lg"></fa-icon>
+        </a>
+        <div class="form-floating mb-3 shadow">
+            <input type="number" class="form-control border-secondary" id="inputScore" placeholder="Score" [(ngModel)]="newBetRule.score">
+            <label for="inputScore" class="form-label">Score</label>
+        </div>
     </div>
-    <table class="table table-striped border-secondary">
-        <thead>
-            <tr>
-                <th scope="col">Ações</th>
-                <th scope="col">Estatstica</th>
-                <th scope="col">Time</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Obrigatório</th>
-                <th scope="col">Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let statSelected of statsSelected">
-                <td>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a type="button" (click)="removeRule(statSelected)">
-                                <fa-icon [icon]="faMinusCircle" size="lg"></fa-icon>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-                <td>{{statSelected.name}}</td>
-                <td>{{statSelected.teamType}}</td>
-                <td>{{statSelected.value}}</td>
-                <td>{{statSelected.mandatory}}</td>
-                <td>{{statSelected.score}}</td>
-            </tr>
-
-        </tbody>
-    </table>
-</form>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button type="button" class="btn btn-card" (click)="addRule()" [disabled]="!enableAddRule()">
+            Adicionar Regra
+            <fa-icon [icon]="faPlusCircle"></fa-icon>
+        </button>
+    </div>
+</div>
+<br>

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Apollo, gql, QueryRef } from 'apollo-angular';
+import { Observable } from 'rxjs';
 import { BetType } from './model/bet-type.model';
 
 @Injectable({
@@ -8,45 +8,19 @@ import { BetType } from './model/bet-type.model';
 })
 export class BetTypeService {
 
-  private betsQuery: QueryRef<{ bets: BetType[] }, { token: string; }>
+  url = 'http://localhost:8080/bet'
 
-  constructor(private apollo: Apollo) {
-    this.betsQuery = this.apollo.watchQuery({
-      query: gql`query($token: String!) {
-            bets(token: $token) {
-              id
-              name
-              scoreEntry
-              scoreMinimumEntry
-              minimumDashMinute
-              maximumDashMinute
-              maximumAdvantageInResult
-              periodMatch
-              templateMessageTelegram
-              automaticSendTelegram
-              minimumOdd
-              unit
-              rules {
-                id
-                type
-                name
-                value
-                score
-                mandatory
-                mandatoryAfterRedCard
-                comparator
-                teamType
-              }
-            }
-          }`,
-          variables: {
-            token: sessionStorage.getItem('token')!
-          }
-    });
+  // Headers
+  httpOptions = {
+    headers: new HttpHeaders({ 
+      'Content-Type': 'application/json', 
+      'Authorization' : 'Bearer ' + sessionStorage.getItem('token')
+    })
   }
 
-  async getBets(): Promise<BetType[]> {
-    const result = await this.betsQuery.refetch();
-    return result.data.bets;
+  constructor(private http: HttpClient) { }
+
+  getBets(): Observable<BetType[]> {
+    return this.http.get<BetType[]>(this.url, this.httpOptions).pipe()
   }
 }

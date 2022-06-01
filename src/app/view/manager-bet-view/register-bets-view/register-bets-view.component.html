@@ -12,31 +12,59 @@
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.scoreMinimumEntry"
-                    (input)="model!.scoreMinimumEntry" name="scoreMinimumEntry" class="form-control border-secondary"
-                    id="inputScoreAlmostEntry" placeholder="Valor Score (Perto do Padrão de Entrada)">
-                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreMinimumEntry"
-                    (input)="requestBetType.scoreMinimumEntry" name="scoreMinimumEntry"
-                    class="form-control border-secondary" id="inputScoreAlmostEntry"
-                    placeholder="Valor Score (Perto do Padrão de Entrada)">
-                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
-                    (Perto
-                    do Padrão de
-                    Entrada)</label>
+                <input *ngIf="model != null" type="number" [value]="model!.maximumAdvantageInResult"
+                    (input)="model!.name" name="maximumDifferenceGol" class="form-control border-secondary"
+                    id="inputMaximumDifference" placeholder="Nome da Aposta">
+                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.maximumAdvantageInResult"
+                    (input)="requestBetType.maximumAdvantageInResult" name="maximumDifferenceGol"
+                    class="form-control border-secondary" id="inputMaximumDifference" placeholder="Nome da Aposta">
+                <label for="inputMaximumDifference" class="form-label">Máxima Diferença de Gols</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.scoreEntry" (input)="model!.scoreEntry"
-                    name="scoreEntry" class="form-control border-secondary" id="inputScoreAlmostEntry"
-                    placeholder="Valor Score (Padrão de Entrada)">
+                <input *ngIf="model != null" type="text" [value]="model!.resultRequired" (input)="model!.resultRequired"
+                    name="resulRequired" class="form-control border-secondary" id="inputResultRequired"
+                    placeholder="Status da Partida">
+                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.resultRequired"
+                    (input)="requestBetType.resultRequired" name="resulRequired" class="form-control border-secondary"
+                    id="inputResultRequired" placeholder="Status da Partida">
+                <label for="inputResultRequired" class="form-label">Status da Partida</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input *ngIf="model != null" type="number" [value]="model!.minimumScore" (input)="model!.minimumScore"
+                    name="inputminimumScore" class="form-control border-secondary" id="inputminimumScore"
+                    placeholder="Valor Score Mínimo">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreMinimumEntry"
+                    (input)="requestBetType.scoreMinimumEntry" name="minimumScore" class="form-control border-secondary"
+                    id="inputminimumScore" placeholder="Valor Score Mínimo">
+                <label for="inputminimumScore" class="form-label">Valor Score Mínimo</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input *ngIf="model != null" type="number" [value]="model!.goodScore" (input)="model!.goodScore"
+                    name="goodScore" class="form-control border-secondary" id="inputScoreAlmostEntry"
+                    placeholder="Valor Bom Score">
                 <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreEntry"
                     (input)="requestBetType.scoreEntry" name="scoreEntry" class="form-control border-secondary"
                     id="inputScoreAlmostEntry" placeholder="Valor Score (Padrão de Entrada)">
-                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Score
-                    (Padrão
-                    de
-                    Entrada)</label>
+                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Bom Score</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 shadow">
+                <input *ngIf="model != null" type="number" [value]="model!.greatScore" (input)="model!.greatScore"
+                    name="greatScore" class="form-control border-secondary" id="inputScoreAlmostEntry"
+                    placeholder="Valor Excelente Score">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreEntry"
+                    (input)="requestBetType.scoreEntry" name="scoreEntry" class="form-control border-secondary"
+                    id="inputScoreAlmostEntry" placeholder="Valor Excelente Score">
+                <label for="inputMinimumTimeAnalysis" class="form-label">Valor Excelente Score</label>
             </div>
         </div>
     </div>
@@ -65,7 +93,7 @@
                     class="form-control border-secondary" id="inputMinimumTimeAnalysis"
                     placeholder="Tempo Mínimo de Análise da Aposta (Min)">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Tempo Mínimo de
-                    Análise da Aposta
+                    Análise de Aposta no Dash
                 </label>
             </div>
         </div>
@@ -79,36 +107,50 @@
                     name="maximumDashMinute" id="inputMaximumTimeAnalysis"
                     placeholder="Tempo Máximo de Análise da Aposta (Min)">
                 <label for="inputMaximumTimeAnalysis" class="form-label">Tempo Máximo de
-                    Análise da Aposta
+                    Análise de Aposta no Dash
                 </label>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
-            <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="text" class="form-control border-secondary"
-                    [value]="model!.minimumOdd" (input)="model!.minimumOdd" name="minimumOdd" id="inputminimumOdd"
-                    placeholder="Valor mínimo da Odd para realizar entrada">
-                <input *ngIf="requestBetType != null" type="text" class="form-control border-secondary"
-                    [value]="requestBetType.minimumOdd" (input)="requestBetType.minimumOdd" name="minimumOdd"
-                    id="inputminimumOdd" placeholder="Valor mínimo da Odd para realizar entrada">
-                <label for="inputminimumOdd" class="form-label">Valor mínimo da Odd da entrada</label>
+        <div class="col-4" *ngIf="model.corner">
+            <div class="form-check mb-2">
+                <input *ngIf="model != null" class="form-check-input" type="checkbox" [value]="model.corner"
+                    (input)="model.corner" [checked]="model.corner" name="isCorner" id="flexCheckDefault">
+                <input *ngIf="requestBetType != null" class="form-check-input" type="checkbox"
+                    [value]="requestBetType.enabled" (input)="requestBetType.enabled" name="isCorner"
+                    id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    É mercado de escanteios?
+                </label>
+            </div>
+        </div>
+        <div class="col-4" *ngIf="model.equal">
+            <div class="form-check mb-2">
+                <input *ngIf="model != null" class="form-check-input" type="checkbox" [value]="model.equal"
+                    (input)="model.equal" [checked]="model.equal" name="isEqual" id="flexCheckDefault">
+                <input *ngIf="requestBetType != null" class="form-check-input" type="checkbox"
+                    [value]="requestBetType.enabled" (input)="requestBetType.enabled" name="isEqual"
+                    id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    É Race ?
+                </label>
             </div>
         </div>
         <div class="col-4">
-            <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="text" class="form-control border-secondary" [value]="model!.unit"
-                    (input)="model!.unit" name="unit" id="unit" placeholder="Valor da unidade de entrada da aposta (U)">
-                <input *ngIf="requestBetType != null" type="text" class="form-control border-secondary"
-                    [value]="requestBetType.unit" (input)="requestBetType.unit" name="unit" id="unit"
-                    placeholder="Valor da unidade de entrada da aposta (U)">
-                <label for="inputminimumOdd" class="form-label">Valor da unidade de
-                    entrada</label>
+            <div class="form-check">
+                <input *ngIf="model != null" class="form-check-input" type="checkbox" [value]="model.enabled"
+                    (input)="model.enabled" [checked]="model.enabled" name="enabled" id="flexCheckDefault">
+                <input *ngIf="requestBetType != null" class="form-check-input" type="checkbox"
+                    [value]="requestBetType.enabled" (input)="requestBetType.enabled" name="enabled"
+                    id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Aposta está habilitada
+                </label>
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-8">
             <div class="form-floating mb-3 shadow">
                 <textarea *ngIf="model != null" class="form-control border-secondary"
@@ -133,5 +175,5 @@
                 </label>
             </div>
         </div>
-    </div>
+    </div> -->
 </form>

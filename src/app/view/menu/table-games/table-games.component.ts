@@ -31,10 +31,11 @@ export class TableGamesComponent implements OnInit {
     this.getMatchesAlive()
   }
 
-  private getMatchesAlive() {
-    console.log('buscando')
-    this.alertService.getMatchesAlive().subscribe((data: MatchAlive[]) => this.listMatchesAlive = data)
-    console.log('finalizando')
+  private async getMatchesAlive() {
+    await this.alertService.getMatchesAlive().subscribe((data: MatchAlive[]) => this.listMatchesAlive = data)
+    console.log(this.listMatchesAlive)
+    this.listMatchesAlive = []
+    console.log(this.listMatchesAlive)
   }
 
 }

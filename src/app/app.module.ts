@@ -24,10 +24,10 @@ import { RegisterTeamScoreViewComponent } from './view/register-team-score-view/
 import { RegisterLeagueScoreViewComponent } from './view/register-league-score-view/register-league-score-view.component';
 import { RegisterBlackListViewComponent } from './view/register-black-list-view/register-black-list-view.component';
 import { MyBetsViewComponent } from './view/manager-bet-view/my-bets-view/my-bets-view.component';
-import { RegisterScoreBasicViewComponent } from './view/manager-bet-view/register-score-basic-view/register-score-basic-view.component';
 import { LogoTeamComponent } from './shared/components/logo-team/logo-team.component';
 import { LoginViewComponent } from './view/login/login-view/login-view.component';
 import { ButtonCardComponent } from './shared/components/button-card/button-card.component';
+import { MyScoreStatsViewComponent } from './view/manager-bet-view/my-score-stats-view/my-score-stats-view.component';
 
 @NgModule({
   declarations: [
@@ -43,10 +43,10 @@ import { ButtonCardComponent } from './shared/components/button-card/button-card
     RegisterLeagueScoreViewComponent,
     RegisterBlackListViewComponent,
     MyBetsViewComponent,
-    RegisterScoreBasicViewComponent,
     LogoTeamComponent,
     LoginViewComponent,
-    ButtonCardComponent
+    ButtonCardComponent,
+    MyScoreStatsViewComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +64,7 @@ import { ButtonCardComponent } from './shared/components/button-card/button-card
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://totonero-dashbord-service.us-east-1.elasticbeanstalk.com/graphql',
+          uri: 'http://localhost:8090/graphql',
         }),
       };
     },

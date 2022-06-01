@@ -1,18 +1,23 @@
-import { Rule } from "../../rule/model/rule.model";
+import { BetRule } from "../../rule/model/bet-rule.model";
 
-export interface BetType {
+export class BetType {
     id: string;
     name: string;
-    scoreMinimumEntry: number;
-    scoreEntry: number;
+    nameSimple: string;
+    minimumScore: number;
+    goodScore: number;
+    greatScore: number;
     periodMatch: string;
+    firstHalf: boolean;
+    resultRequired: string;
+    enabled: boolean;
+    corner: boolean;
+    equal: boolean;
     minimumDashMinute: number;
     maximumDashMinute: number;
     maximumAdvantageInResult: number;
     templateMessageTelegram: string;
     automaticSendTelegram: boolean;
-    minimumOdd: number;
-    unit: number;
-    rules: Rule[]
+    rules: BetRule[]
 
 }

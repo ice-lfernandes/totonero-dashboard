@@ -1,0 +1,38 @@
+<form>
+    <app-register-score-stats-view [model]="model" (model)="model"></app-register-score-stats-view>
+    <br>
+    <div class="row">
+        <h5>Estatisticas de Score Cadastradas</h5>
+    </div>
+    <table class="table table-striped border-secondary">
+        <thead>
+            <tr>
+                <th scope="col">Ações</th>
+                <th scope="col">Estatstica</th>
+                <th scope="col">Time</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Obrigatório</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let betRule of statsSelected">
+                <td>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a type="button" (click)="removeRule(betRule)">
+                                <fa-icon [icon]="faMinusCircle" size="lg"></fa-icon>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>{{betRule.rule.name}}</td>
+                <td>{{betRule.teamType}}</td>
+                <td>{{betRule.value}}</td>
+                <td>{{betRule.mandatory}}</td>
+                <td>{{betRule.score}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</form>

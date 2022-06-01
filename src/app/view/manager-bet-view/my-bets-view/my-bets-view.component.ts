@@ -17,7 +17,7 @@ export class MyBetsViewComponent implements OnInit {
   faEraser = faEraser
   faSave = faSave
 
-  bets: Array<BetType> = []
+  bets: BetType[] = []
   betIdSelected!: string
   betSelected: BetType | undefined
   isBetSelected: boolean = false
@@ -31,7 +31,7 @@ export class MyBetsViewComponent implements OnInit {
   }
 
   async getBets() {
-    this.bets = await this.service.getBets();
+    this.service.getBets().subscribe((data: BetType[]) => this.bets = data)
   }
 
   visualizeBetType() {
