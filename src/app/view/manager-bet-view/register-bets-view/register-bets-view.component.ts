@@ -32,4 +32,10 @@ export class RegisterBetsViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChangePeriodMatch(periodMatch: string) {
+    console.log(periodMatch)
+    this.model.periodMatch = periodMatch
+    console.log(this.model.periodMatch)
+  }
+
 }

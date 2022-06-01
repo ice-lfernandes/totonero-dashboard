@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="text" [value]="model!.name" (input)="model!.name" name="nameBet"
+                <input *ngIf="model != null" type="text" [(ngModel)]="model.name" name="nameBet"
                     class="form-control border-secondary" id="inputNameBet" placeholder="Nome da Aposta">
                 <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.name"
                     (input)="requestBetType.name" name="nameBet" class="form-control border-secondary" id="inputNameBet"
@@ -12,20 +12,19 @@
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.maximumAdvantageInResult"
-                    (input)="model!.name" name="maximumDifferenceGol" class="form-control border-secondary"
-                    id="inputMaximumDifference" placeholder="Nome da Aposta">
-                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.maximumAdvantageInResult"
-                    (input)="requestBetType.maximumAdvantageInResult" name="maximumDifferenceGol"
+                <input *ngIf="model != null" type="number" [(ngModel)]="model.maximumDifferenceInResult"
+                    name="maximumDifferenceGol" class="form-control border-secondary" id="inputMaximumDifference"
+                    placeholder="Nome da Aposta">
+                <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.maximumDifferenceInResult"
+                    (input)="requestBetType.maximumDifferenceInResult" name="maximumDifferenceGol"
                     class="form-control border-secondary" id="inputMaximumDifference" placeholder="Nome da Aposta">
                 <label for="inputMaximumDifference" class="form-label">Máxima Diferença de Gols</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="text" [value]="model!.resultRequired" (input)="model!.resultRequired"
-                    name="resulRequired" class="form-control border-secondary" id="inputResultRequired"
-                    placeholder="Status da Partida">
+                <input *ngIf="model != null" type="text" [(ngModel)]="model!.resultRequired" name="resulRequired"
+                    class="form-control border-secondary" id="inputResultRequired" placeholder="Status da Partida">
                 <input *ngIf="requestBetType != null" type="text" [value]="requestBetType.resultRequired"
                     (input)="requestBetType.resultRequired" name="resulRequired" class="form-control border-secondary"
                     id="inputResultRequired" placeholder="Status da Partida">
@@ -36,33 +35,31 @@
     <div class="row">
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.minimumScore" (input)="model!.minimumScore"
-                    name="inputminimumScore" class="form-control border-secondary" id="inputminimumScore"
-                    placeholder="Valor Score Mínimo">
-                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreMinimumEntry"
-                    (input)="requestBetType.scoreMinimumEntry" name="minimumScore" class="form-control border-secondary"
+                <input *ngIf="model != null" type="number" [(ngModel)]="model!.minimumScore" name="inputminimumScore"
+                    class="form-control border-secondary" id="inputminimumScore" placeholder="Valor Score Mínimo">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.minimumScore"
+                    (input)="requestBetType.minimumScore" name="minimumScore" class="form-control border-secondary"
                     id="inputminimumScore" placeholder="Valor Score Mínimo">
                 <label for="inputminimumScore" class="form-label">Valor Score Mínimo</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.goodScore" (input)="model!.goodScore"
-                    name="goodScore" class="form-control border-secondary" id="inputScoreAlmostEntry"
-                    placeholder="Valor Bom Score">
-                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreEntry"
-                    (input)="requestBetType.scoreEntry" name="scoreEntry" class="form-control border-secondary"
+                <input *ngIf="model != null" type="number" [(ngModel)]="model!.goodScore" name="goodScore"
+                    class="form-control border-secondary" id="inputScoreAlmostEntry" placeholder="Valor Bom Score">
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.goodScore"
+                    (input)="requestBetType.goodScore" name="scoreEntry" class="form-control border-secondary"
                     id="inputScoreAlmostEntry" placeholder="Valor Score (Padrão de Entrada)">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Valor Bom Score</label>
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3 shadow">
-                <input *ngIf="model != null" type="number" [value]="model!.greatScore" (input)="model!.greatScore"
-                    name="greatScore" class="form-control border-secondary" id="inputScoreAlmostEntry"
+                <input *ngIf="model != null" type="number" [(ngModel)]="model!.greatScore" name="greatScore"
+                    class="form-control border-secondary" id="inputScoreAlmostEntry"
                     placeholder="Valor Excelente Score">
-                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.scoreEntry"
-                    (input)="requestBetType.scoreEntry" name="scoreEntry" class="form-control border-secondary"
+                <input *ngIf="requestBetType != null" type="number" [value]="requestBetType.greatScore"
+                    (input)="requestBetType.greatScore" name="scoreEntry" class="form-control border-secondary"
                     id="inputScoreAlmostEntry" placeholder="Valor Excelente Score">
                 <label for="inputMinimumTimeAnalysis" class="form-label">Valor Excelente Score</label>
             </div>
@@ -71,16 +68,14 @@
     <div class="row">
         <div class="col-4">
             <div class="form-floating">
-                <select class="form-select shadow border-secondary" name="periodMatch"
+                <!-- <select class="form-select shadow border-secondary" name="periodMatch" [(ngModel)]="model.periodMatch"
+                    [ngModelOptions]="{standalone:true}" (ngModelChange)="onChangePeriodMatch($event)"
                     aria-label="Default select example" id="selectPeriod">
-                    <option *ngIf="model != null" selected [value]="model!.periodMatch">
-                        {{model!.periodMatch}}</option>
-                    <option *ngIf="requestBetType != null" selected [value]="requestBetType.periodMatch">
-                        {{requestBetType.periodMatch}}</option>
-                    <option value="1" (value)="model!.periodMatch">1T</option>
-                    <option value="2" (value)="model!.periodMatch">2T</option>
+                    <option selected disabled>Período do Jogo</option>
+                    <option value="1" [ngValue]="model!.periodMatch">1T</option>
+                    <option value="2" [ngValue]="model!.periodMatch">2T</option>
                 </select>
-                <label for="selectPeriod">Período do Jogo</label>
+                <label for="selectPeriod">Período do Jogo</label> -->
             </div>
         </div>
         <div class="col-4">

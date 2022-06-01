@@ -34,10 +34,23 @@ export class MyBetsViewComponent implements OnInit {
     this.service.getBets().subscribe((data: BetType[]) => this.bets = data)
   }
 
+  async saveBet() {
+    if (this.isNewBetRequest) {
+      // this.service.updateBet(this.betSelected!).subscribe((data: BetType) => this.betSelected = data)
+    } else {
+      console.log(this.betSelected)
+      this.service.updateBet(this.betSelected!).subscribe((data: BetType) => this.betSelected = data)
+    }
+  }
+
   visualizeBetType() {
     this.betSelected = this.bets.find(b => b.id == this.betIdSelected)
     this.isBetSelected = true
     this.isNewBetRequest = false
+  }
+
+  isVisualizeEnabled(): boolean {
+    return this.betIdSelected != null
   }
 
   cleanBetType() {
