@@ -27,6 +27,8 @@ export class RegisterBetsViewComponent implements OnInit {
   @Input() model: BetType
   @Input() requestBetType: BetTypeRequest
 
+  periodMatchAvailables: string[] = ["1T", "2T"]
+
   constructor() { }
 
   ngOnInit(): void {
